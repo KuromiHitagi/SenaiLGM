@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../Aulas/footerStyle.css">
+    <title>Aula 04</title>
+</head>
+
+<body>
+    <main>
+        <div class="title">
+            <h2>Alunos e Notas</h2>
+
+            <div id="CampoForm">
+                <!-- Aqui será renderizado os Input -->
+                 <div id="CampoNome"></div>
+                 <div id="CampoNota"></div>
+                 <div id="CampoCurso"></div>
+                 <div id="CampoBimestre"></div>
+                 <div id="CampoButtonSave"></div>
+                 <div id="CampoButtonApagar"></div>
+            </div>
+
+            <button onclick="CriarForm()">Adicionar Dados</button>
+        </div>
+        <div class="table-alunos-notas">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Matrícula</th>
+                        <th>Aluno(a)</th>
+                        <th>Disciplina</th>
+                        <th>Bimestre</th>
+                        <th>Nota</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Média Geral:</td>
+                        <td id="mediaGeral"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>
