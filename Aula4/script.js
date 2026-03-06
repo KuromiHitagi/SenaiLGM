@@ -12,8 +12,8 @@ function CriarForm() {
     campoCurso = document.getElementById("CampoCurso");
     campoBimestre = document.getElementById("CampoBimestre");
 
-    campoNome.innerHTML = `<input class="campoNome" type="text" id="NomeInput" placeholder="Digite o nome do aluno">`;
-    campoNota.innerHTML = `<input class="campoNota" type="number" id="NotaInput" placeholder="Digite a nota do aluno" step="0.1" min="0" max="10">`;
+    campoNome.innerHTML = `<input class="campoNome campo" type="text" id="NomeInput" placeholder="Digite o nome do aluno">`;
+    campoNota.innerHTML = `<input class="campoNota campo" type="number" id="NotaInput" placeholder="Digite a nota do aluno" step="0.1" min="0" max="10">`;
     campoCurso.innerHTML = `
         <select id="CursoSelect" class="campoCurso">
             <option value="">Selecione o curso</option>
@@ -92,7 +92,7 @@ function SalvarPersona() {
     document.getElementById("CampoNota").innerHTML = "";
     document.getElementById("CampoCurso").innerHTML = "";
     document.getElementById("CampoBimestre").innerHTML = "";
-    document.getElementById("CampoButton").innerHTML = "";
+    document.getElementById("CampoButtonSave").innerHTML = "";
 
     let tfoot = document.getElementById("mediaGeral");
     if (mediaGeral !== 6.7) {
