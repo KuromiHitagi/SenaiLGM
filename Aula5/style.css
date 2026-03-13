@@ -12,17 +12,48 @@ main {
     height: 100%;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     background-color: antiquewhite;
     gap: 25px;
 }
 
-.quadrado{
+.quadrado {
     height: 100px;
     width: 100px;
     border: 1px solid black;
 
     text-align: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 25px;
+
+    .btnReset {
+        opacity: 0;
+    }
+
+    .btnReset2 {
+        opacity: 1;
+    }
+}
+
+.Turno{
+    p{
+        text-decoration: underline;
+
+        .JogadorX{
+            text-decoration: underline;
+            color: blue;
+        }
+        .JogadorO{
+            text-decoration: underline;
+            color: red;
+        }
+    }   
 }

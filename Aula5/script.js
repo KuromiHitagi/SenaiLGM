@@ -1,5 +1,19 @@
 let container = document.querySelector("tbody")
+let btnArea = document.getElementById("btn");
+let btnReset = document.getElementById("btnReset")
 let JogadorAtual = "X";
+let EspacoDisponivel = 9;
+
+function Teste() {
+    btnArea.innerHTML += `<button class="btnGerar" onclick="Renderizar()">Gerar</button>
+                          <button class="btnReset" id="btnReset" onclick="ResetarGame()">Resetar</button>`
+}
+
+function Renderizar() {
+    gerarTabela();
+    clicarContainer();
+    ExibirJogadorAtual();
+}
 
 function gerarTabela() {
     //Limpar o container se for chamada novamente
@@ -23,38 +37,70 @@ function gerarTabela() {
 }
 
 function clicarContainer() {
+    let btnResetElement = document.getElementById("btnReset")
+    if (btnResetElement) {
+        btnReset.classList.add("btnReset2")
+    }
     const lista = document.querySelectorAll(".quadrado")
+
     lista.forEach((e) => {
-        if (JogadorAtual === "X") {
-            e.addEventListener("mouseenter", (el) => {
+
+        e.addEventListener("mouseenter", (el) => {
+            if (JogadorAtual === "X") {
                 el.target.style.backgroundColor = "rgb(0, 150, 230)";
-            })
-        } else if (JogadorAtual === "O") {
-            e.addEventListener("mouseenter", (el) => {
+            } else {
                 el.target.style.backgroundColor = "rgb(230, 80, 0)";
-            })
-        }
+            }
+        })
 
         e.addEventListener("mouseleave", (el) => {
             el.target.style.backgroundColor = "antiquewhite";
         })
 
-        e.addEventListener("click", (evento) => {
-            console.log("AHHH");
+        e.addEventListener("click", () => {
+            if (EspacoDisponivel > 0) {
+                console.log("O jogador que clicou foi: ");
 
-            if (evento.target.tagName == "TD" && evento.target.innerHTML === "") {
-                if (JogadorAtual === "X") {
-                    evento.target.innerText = "X"
-                    JogadorAtual = "O"
-                } else {
-                    evento.target.innerText = "O"
-                    JogadorAtual = "X"
+                if (e.tagName == "TD" && e.innerHTML === "") {
+                    e.innerText = JogadorAtual;
+
+                    JogadorAtual = (JogadorAtual == "X") ? "O" : "X";
+                    EspacoDisponivel--;
+
+                    console.log("Espaços restantes: " + EspacoDisponivel)
+                    console.log("")
+
+                    if (EspacoDisponivel == 0) {
+                        setTimeout(() => alert("Bah kkkk reseta aí po"), 50)
+                    }
+
+                    ExibirJogadorAtual();
                 }
             }
         })
     })
 }
 
-// Inicializar a funções
-gerarTabela()
-clicarContainer()
+function ExibirJogadorAtual() {
+    let DivTurno = document.getElementById("Turno");
+    DivTurno.innerHTML = `<p>Jogador Atual: <span class="${JogadorAtual}">${JogadorAtual}</span></p>`;
+}
+
+function ResetarGame() {
+    console.clear()
+    console.log("Jogo Resetado")
+    console.log("")
+
+    JogadorAtual = "X";
+    EspacoDisponivel = 9;
+    const lista = document.querySelectorAll(".quadrado")
+
+    lista.forEach((e) => {
+        if (e.tagName == "TD") {
+            e.innerText = ""
+        }
+    })
+}
+
+//Inicializar função Mãe
+Teste();
