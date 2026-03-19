@@ -19,21 +19,33 @@
     header {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 40.5%;
         z-index: 1000;
+
         align-self: start;
         max-width: 20%;
 
+        margin: 10px 0 0 0;
+        padding: 0 10px;
+
+        border: none;
+        border-radius: 7px;
+
+        background-color: antiquewhite;
+
         & nav {
             position: fixed;
-            top: 20%;
+            top: 15%;
             left: 0;
             z-index: 1000;
 
-            width: 10%;
-            height: 60%;
+            width: 8%;
+            height: 70%;
 
-            background-color: blue;
+            border: none;
+            border-radius: 0 15px 15px 0;
+
+            background: linear-gradient(to bottom, #e21111, #ee7116, #bc6f15);
         }
     }
 
@@ -54,6 +66,11 @@
         }
 
         & .section2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
             width: 50%;
             height: 100%;
 
