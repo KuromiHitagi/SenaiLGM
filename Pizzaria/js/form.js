@@ -26,46 +26,63 @@ function FormularioCliente1() {
 
                     <div class="dados">
                     
-                        <label for="Cidade">Idade:</label>
-                        <input id="Cidade" type="number" min="18" max="100" >
+                        <div class="divisao1">
 
-                        <br>
-
-                        <label for="Cdata">Data de Nascimento:</label>
-                        <input id="Cdata" type="date" >
-
-                        <br>
-
-                        <label for="Cfoto">Foto:</label>
-                        <input id="Cfoto" type="file" accept="image/*">
-
-                        <br>
-
-                        <label for="Ccor">Cor:</label>
-                        <input id="Ccor" type="color">
-
-                        <br>
-
-                        <label for="Cportugues">portugues:</label>
-                        <input id="Cportugues" type="checkbox">
-
-                        <label for="Cmatematica">matematica:</label>
-                        <input id="Cmatematica" type="checkbox" checked>
-
+                            <div class="labelInput">
                         
-                        <br>
+                                <label for="Cidade">Idade:</label>
+                                <input id="Cidade" type="number" min="18" max="100" >
+                            
+                            </div>
+                            
 
-                        <label for="Cmasc">Masculino:</label>
-                        <input id="Cmasc" name="sexo" type="radio">
+                            <div class="labelInput">
+                            
+                                <label for="Cdata">Data de Nascimento:</label>
+                                <input id="Cdata" type="date" >
+                            
+                            </div>
+                            
 
-                        <label for="Cfemi">Feminino:</label>
-                        <input id="Cfemi"name="sexo" type="radio">
+                            <div class="labelInput">
+
+                                <label for="Cfoto">Foto:</label>
+                                <input id="Cfoto" type="file" accept="image/*"> 
+                            
+                                </div>
+                            
+                        </div>
+
+                        <div class="divisao2">
+
+                            <label for="Ccor">Cor:</label>
+                            <input id="Ccor" type="color">
+
+                            <br>
+
+                            <label for="Cportugues">portugues:</label>
+                            <input id="Cportugues" type="checkbox">
+
+                            <label for="Cmatematica">matematica:</label>
+                            <input id="Cmatematica" type="checkbox" checked>
+                            
+                            <br>
+
+                            <label for="Cmasc">Masculino:</label>
+                            <input id="Cmasc" name="sexo" type="radio">
+
+                            <label for="Cfemi">Feminino:</label>
+                            <input id="Cfemi"name="sexo" type="radio">
+
+                        </div>
 
                     </div>
 
                     <div class="Btn">
+
                         <button onclick="Prosseguir()" type="submit">Prosseguir</button>
                         <button onclick="Cancelar()" type="reset">Cancelar</button>
+
                     </div>
                     `
 }

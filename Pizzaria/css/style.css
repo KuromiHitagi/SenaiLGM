@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 1920px) {
-    body{
+    body {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -14,20 +14,22 @@
 
         width: 100vw;
         height: 100vh;
-
-        background-color: antiquewhite;
     }
 
-    header{
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
         align-self: start;
         max-width: 20%;
 
-        & nav{
-            position: absolute;
+        & nav {
+            position: fixed;
             top: 20%;
             left: 0;
             z-index: 1000;
-            
+
             width: 10%;
             height: 60%;
 
@@ -35,19 +37,29 @@
         }
     }
 
-    main{
+    main {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
+        flex-direction: row;
 
         width: 100%;
-        height: 80%;
+        height: 100%;
 
-        & section{
-            width: 100%;
+        & .section1 {
+            width: 50%;
+            height: 100%;
 
-            & .form{
+            background-color: #5d2828;
+        }
+
+        & .section2 {
+            width: 50%;
+            height: 100%;
+
+            background-color: #ff914d;
+
+            & .form {
                 display: flex;
                 justify-content: center;
                 align-items: start;
@@ -61,20 +73,35 @@
                 border-radius: 15px;
                 background-color: azure;
 
-                & .dados{
+                & .dados {
                     display: flex;
                     justify-content: center;
                     align-items: start;
                     flex-direction: column;
-                    
+
                     width: 94%;
                     margin: auto;
                     padding: 20px;
 
                     border: 1px solid black;
                     border-radius: 15px;
+
+                    & .divisao1,
+                    .divisao2 {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: start;
+                        flex-direction: row;
+
+                        width: 100%;
+
+                        & .labelInput {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
                 }
             }
-        } 
+        }
     }
 }

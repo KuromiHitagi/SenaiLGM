@@ -1,6 +1,15 @@
 const footer = document.getElementById("footer");
 
 footer.innerHTML = `
-                    <h2>Entre em contato: </h2>
+                    <div class="email">
+
+                        
                     
+                    </div>
+                    
+                    <div class="telefone">
+                    
+
+                    
+                    </div>
                     `;
