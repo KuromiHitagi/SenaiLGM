@@ -1,4 +1,4 @@
-const footer = document.createElement('footer');
+const footer = document.querySelector('footer');
 footer.innerHTML = `
     <div>
         <h4>Entre em Contato</h4>
@@ -6,7 +6,7 @@ footer.innerHTML = `
             Email: <a href="mailto:darktails076@gmail.com">darktails076@gmail.com</a>
         </p>
         <p>
-            Visite meu <a href="#" target="_blank">LinkedIn</a> e siga-me! <img width="20px" height="20px" src="../Images/icon-linkedin.png" alt="LinkedIn"/>
+            Visite meu <a href="#" target="_blank">GitHub</a> e siga-me! <img width="20px" height="20px" src="../Images/icon-linkedin.png" alt="GitHub"/>
         </p>
     </div>
     <div class="footer-link">
@@ -18,4 +18,3 @@ footer.innerHTML = `
         </p>
     </div>
 `;
-document.body.appendChild(footer);

@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Dark-Souls-III';
+    src: url('../src/font/OptimusPrinceps.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    overflow-x: hidden;
+    font-family: 'Dark-Souls-III', sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 10%;
+
+    color: white;
+    background-color: black;
+
+    text-decoration: underline;
+
+    & h1 {
+        transition: ease-in-out 0.3s all;
+        cursor: default;
+
+        &:hover {
+            transform: scale(105%);
+        }
+    }
+}
+
+main {
+    width: 100%;
+    height: 89.3%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgb(39, 39, 39);
+
+    & .text {
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        flex-direction: column;
+
+        height: 30%;
+        max-width: 50%;
+
+        & .sinopse {
+            width: fit-content;
+            padding: 10px 15px;
+
+            background-color: rgb(131, 124, 115);
+
+            font-size: 16px;
+            text-align: justify;
+
+            border: 1px solid black;
+            border-radius: 10px;
+
+            transition: ease-in-out 0.2s all;
+            cursor: default;
+
+            &:hover {
+                transform: scale(105%);
+            }
+
+            & .importante {
+                color: rgb(129, 3, 3);
+            }
+        }
+
+        & .middle {
+            
+
+            & .caracteristicas {
+                width: fit-content;
+                padding: 10px 15px;
+
+                background-color: rgb(131, 124, 115);
+
+                font-size: 16px;
+
+                border: 1px solid black;
+                border-radius: 10px;
+
+                transition: ease-in-out 0.2s all;
+                cursor: default;
+
+                &:hover {
+                    transform: scale(105%);
+                }
+
+                & ul {
+                    width: 100%;
+
+                    & li {
+                        width: 100%;
+                        margin: 0px 0px 0px 10px;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    & .image {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+
+        margin-top: auto;
+
+        height: 90%;
+
+        & .image1 {
+            width: 350px;
+            height: 350px;
+
+            & .darkSignImg {
+                width: 100%;
+                height: 100%;
+
+                border: 1px solid black;
+                border-radius: 50%;
+
+                transition: ease-in-out 0.3s all;
+                cursor: default;
+
+                &:hover {
+                    transform: scale(105%);
+                }
+            }
+        }
+
+        & .image2 {
+            width: 700px;
+            height: 350px;
+
+            & .darkSoulsIIIImg {
+                width: 100%;
+                height: 100%;
+
+                border: 1px solid black;
+                border-radius: 10px;
+
+                transition: ease-in-out 0.3s all;
+                cursor: default;
+
+                &:hover {
+                    transform: scale(105%);
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: black !important;
+    color: white !important;
+
+    & h4 {
+        color: rgb(101, 101, 146);
+    }
+
+    & p {
+        color: rgb(101, 101, 146);
+
+        & a {
+            color: rgb(56, 56, 90);
+        }
+    }
+
+    & .footer-link {
+        border: solid 1px white !important;
+    }
+}
