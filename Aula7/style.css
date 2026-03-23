@@ -50,10 +50,15 @@ main {
     height: 89.3%;
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    background-color: rgb(39, 39, 39);
+
+    background-color: rgb(25, 25, 25);
+    background-image: url('../src/Images/DarkSign.jpg');
+    background-size: 300px;
+    background-position: 50%;
+    background-repeat: no-repeat;
 
     & .text {
         display: flex;
@@ -62,16 +67,45 @@ main {
         flex-direction: column;
 
         height: 30%;
-        max-width: 50%;
+        max-width: 40%;
+        margin-left: 25px;
 
-        & .sinopse {
+        & .start{
+            display: flex;
+
+            & .sinopse {
+                width: fit-content;
+                padding: 10px 15px;
+    
+                background-color: rgb(131, 124, 115);
+    
+                font-size: 16px;
+                text-align: justify;
+    
+                border: 1px solid black;
+                border-radius: 10px;
+    
+                transition: ease-in-out 0.2s all;
+                cursor: default;
+    
+                &:hover {
+                    transform: scale(105%);
+                }
+    
+                & .importante {
+                    color: rgb(129, 3, 3);
+                }
+            }
+        }
+
+        & .pontos,
+        .caracteristicas {
             width: fit-content;
             padding: 10px 15px;
 
             background-color: rgb(131, 124, 115);
 
             font-size: 16px;
-            text-align: justify;
 
             border: 1px solid black;
             border-radius: 10px;
@@ -83,44 +117,15 @@ main {
                 transform: scale(105%);
             }
 
-            & .importante {
-                color: rgb(129, 3, 3);
-            }
-        }
+            & ul {
+                width: 100%;
 
-        & .middle {
-            
-
-            & .caracteristicas {
-                width: fit-content;
-                padding: 10px 15px;
-
-                background-color: rgb(131, 124, 115);
-
-                font-size: 16px;
-
-                border: 1px solid black;
-                border-radius: 10px;
-
-                transition: ease-in-out 0.2s all;
-                cursor: default;
-
-                &:hover {
-                    transform: scale(105%);
-                }
-
-                & ul {
+                & li {
                     width: 100%;
-
-                    & li {
-                        width: 100%;
-                        margin: 0px 0px 0px 10px;
-                    }
+                    margin: 0px 0px 0px 10px;
                 }
             }
         }
-
-
     }
 
     & .image {
@@ -131,31 +136,12 @@ main {
 
         margin-top: auto;
 
-        height: 90%;
-
-        & .image1 {
-            width: 350px;
-            height: 350px;
-
-            & .darkSignImg {
-                width: 100%;
-                height: 100%;
-
-                border: 1px solid black;
-                border-radius: 50%;
-
-                transition: ease-in-out 0.3s all;
-                cursor: default;
-
-                &:hover {
-                    transform: scale(105%);
-                }
-            }
-        }
+        height: 94%;
+        margin-right: 25px;
 
         & .image2 {
-            width: 700px;
-            height: 350px;
+            width: 800px;
+            height: 400px;
 
             & .darkSoulsIIIImg {
                 width: 100%;

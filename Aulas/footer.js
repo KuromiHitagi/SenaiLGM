@@ -6,7 +6,7 @@ footer.innerHTML = `
             Email: <a href="mailto:darktails076@gmail.com">darktails076@gmail.com</a>
         </p>
         <p>
-            Visite meu <a href="#" target="_blank">GitHub</a> e siga-me! <img width="20px" height="20px" src="../Images/icon-linkedin.png" alt="GitHub"/>
+            Visite meu <a href="https://github.com/KuromiHitagi/" target="_blank">GitHub</a> e siga-me! <a class="github-icon" target="_blank"><img width="20px" height="20px" src="../src/Images/github-icon.png" alt="GitHub"/></a>
         </p>
     </div>
     <div class="footer-link">

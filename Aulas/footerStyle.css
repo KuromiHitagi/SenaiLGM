@@ -13,6 +13,13 @@ footer {
     align-items: center;
     border-top: solid 1px black;
 
+    & .github-icon{
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 50%;
+        
+    }
+
     & .footer-link {
         margin-left: -150px;
         border: solid 1px black;
