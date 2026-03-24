@@ -65,6 +65,7 @@ main {
         justify-content: space-around;
         align-items: start;
         flex-direction: column;
+        gap: 3px;
 
         height: 30%;
         max-width: 40%;
@@ -72,6 +73,7 @@ main {
 
         & .start{
             display: flex;
+            gap: 3px;
 
             & .sinopse {
                 width: fit-content;
@@ -123,6 +125,13 @@ main {
                 & li {
                     width: 100%;
                     margin: 0px 0px 0px 10px;
+                }
+
+                & .destaque{
+                    background-color: yellow;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 2px;
                 }
             }
         }
