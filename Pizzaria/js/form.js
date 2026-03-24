@@ -2,9 +2,11 @@ function FormularioCliente1() {
     const form = document.getElementById("form")
 
     form.innerHTML = `
-                    <h2>Cadastro de Usuário: </h2>
+                    <div class="title">
+                        <h2>Cadastro de Usuário: </h2>
+                    </div>
 
-                    <label for="Ccod">Código</label>
+                    <label id="Ccod" for="Ccod">Código</label>
                     <input id="Ccod" type="text" size="10" value="1" readonly>
 
                     <br>
@@ -64,7 +66,7 @@ function FormularioCliente1() {
                             <input id="Cportugues" type="checkbox">
 
                             <label for="Cmatematica">matematica:</label>
-                            <input id="Cmatematica" type="checkbox" checked>
+                            <input id="Cmatematica" type="checkbox">
                             
                             <br>
 
@@ -79,10 +81,10 @@ function FormularioCliente1() {
                     </div>
 
                     <div class="Btn">
-
-                        <button onclick="Prosseguir()" type="submit">Prosseguir</button>
-                        <button onclick="Cancelar()" type="reset">Cancelar</button>
-
+                        
+                        <button class="Btn-Cancel" onclick="Cancelar()" type="reset">Cancelar</button>
+                        <button class="Btn-Approve" onclick="Prosseguir()" type="submit">Prosseguir</button>
+                        
                     </div>
                     `
 }
