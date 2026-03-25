@@ -1,3 +1,5 @@
+
+
 function FormularioCliente1() {
     const form = document.getElementById("form")
 
@@ -55,29 +57,6 @@ function FormularioCliente1() {
                             
                         </div>
 
-                        <div class="divisao2">
-
-                            <label for="Ccor">Cor:</label>
-                            <input id="Ccor" type="color">
-
-                            <br>
-
-                            <label for="Cportugues">portugues:</label>
-                            <input id="Cportugues" type="checkbox">
-
-                            <label for="Cmatematica">matematica:</label>
-                            <input id="Cmatematica" type="checkbox">
-                            
-                            <br>
-
-                            <label for="Cmasc">Masculino:</label>
-                            <input id="Cmasc" name="sexo" type="radio">
-
-                            <label for="Cfemi">Feminino:</label>
-                            <input id="Cfemi"name="sexo" type="radio">
-
-                        </div>
-
                     </div>
 
                     <div class="Btn">
@@ -88,15 +67,18 @@ function FormularioCliente1() {
                     </div>
                     `
 }
+FormularioCliente1();
 
 function FormularioCliente2() {
     const form = document.getElementById("form")
 
     form.innerHTML = `
-                    <h2>Cadastro de Carro: </h2>
+                    <div class="title">
+                        <h2>Cadastro de Sla: </h2>
+                    </div>
 
-                    <label for="Ccod">Código</label>
-                    <input id="Ccod" type="text" size="10" value="2" readonly>
+                    <label class="Ccod" for="Ccod">Código</label>
+                    <input class="Ccod" id="Ccod" type="text" size="10" value="2" readonly>
 
                     <br>
 
@@ -116,8 +98,8 @@ function FormularioCliente2() {
 
                     <div class="Btn">
                         
-                        <button onclick="Cancelar()" type="reset">Cancelar</button>
-                        <button onclick="Prosseguir()" type="submit">Prosseguir</button>
+                        <button class="Btn-Cancel" onclick="Cancelar()" type="reset">Cancelar</button>
+                        <button class="Btn-Approve" onclick="Prosseguir()" type="button">Prosseguir</button>
                     
                     </div>
                     `

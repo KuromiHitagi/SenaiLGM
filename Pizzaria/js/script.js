@@ -1,17 +1,42 @@
 let contador = 0;
-let User = [];
+let listaUsuarios = [];
+
+function SalvarNoSession(objetoUsuario) {
+    // Transformamos o objeto em String para o SessionStorage aceitar
+    const dadosEmString = JSON.stringify(objetoUsuario);
+    sessionStorage.setItem("usuarioTemporario", dadosEmString);
+}
+
+function CarregarDados() {
+    const dadosSalvos = sessionStorage.getItem("usuarioTemporario");
+
+    if(dadosSalvos) {
+        const usuario = JSON.parse(dadosSalvos);
+
+        if(document.getElementById("Cnome")) {
+            document.getElementById("Ccod").value = usuario.cod || "";
+            document.getElementById("Cnome").value = usuario.nome || "";
+            document.getElementById("Cemail").value = usuario.email || "";
+        }
+    }
+}
 
 function Prosseguir() {
-    const newUser = {
-        cod: document.getElementById("Ccod").ariaValueMax,
-        nome: document.getElementById("Cnome").ariaValueMax,
-        email: document.getElementById("Cemail").ariaValueMax,
-        senha: document.getElementById("Csenha").ariaValueMax,
-    }
+    // 1. Captura os dados da tela
+    const novoUsuario = {
+        cod: document.getElementById("Ccod").value,
+        nome: document.getElementById("Cnome").value,
+        email: document.getElementById("Cemail").value,
+    };
 
-    User.push(newUser);
-    console.log("Lista Atualizada" + User);
+    // 2. Adiciona à lista na memória (Array)
+    listaUsuarios.push(novoUsuario);
+    console.log("Lista Atualizada:", listaUsuarios);
 
+    // 3. Salva apenas o usuário atual no SessionStorage (Rascunho)
+    SalvarNoSession(novoUsuario);
+
+    // 4. Avança a tela
     contador += 1;
     Decidir();
 }
@@ -25,8 +50,8 @@ function Cancelar() {
 function Decidir() {
     if (contador == 0) {
         FormularioCliente1();
+        CarregarDados();
     } else if (contador == 1) {
         FormularioCliente2();
     } 
 }
-Decidir();
