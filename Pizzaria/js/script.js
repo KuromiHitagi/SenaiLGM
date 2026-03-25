@@ -1,6 +1,17 @@
 let contador = 0;
+let User = [];
 
 function Prosseguir() {
+    const newUser = {
+        cod: document.getElementById("Ccod").ariaValueMax,
+        nome: document.getElementById("Cnome").ariaValueMax,
+        email: document.getElementById("Cemail").ariaValueMax,
+        senha: document.getElementById("Csenha").ariaValueMax,
+    }
+
+    User.push(newUser);
+    console.log("Lista Atualizada" + User);
+
     contador += 1;
     Decidir();
 }
@@ -16,7 +27,6 @@ function Decidir() {
         FormularioCliente1();
     } else if (contador == 1) {
         FormularioCliente2();
-    }
+    } 
 }
-
 Decidir();

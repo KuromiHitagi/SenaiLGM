@@ -1,180 +1,162 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 
     font-family: Arial;
 }
 
-@media (max-width: 1920px) {
-    body {
+body {
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+    min-height: 100vh;
+    height: 100vh;
+}
+
+header {
+    & nav {
+        position: fixed;
+        top: 15%;
+        left: 0;
+        z-index: 1000;
+
+        width: 8%;
+        height: 70%;
+
+        border: none;
+        border-radius: 0 15px 15px 0;
+
+        background: linear-gradient(to bottom, #e21111, #ee7116, #bc6f15);
+    }
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    width: 100%;
+
+    & .section1 {
+        width: 50%;
+        height: 100%;
+
+        background-color: #5d2828;
+    }
+
+    & .section2 {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
 
-        width: 100vw;
-        height: 100vh;
-    }
-
-    header {
-        position: absolute;
-        top: 0;
-        left: 40.5%;
-        z-index: 1000;
-
-        align-self: start;
-        max-width: 20%;
-
-        margin: 10px 0 0 0;
-        padding: 0 10px;
-
-        border: none;
-        border-radius: 7px;
-
-        background-color: antiquewhite;
-
-        & nav {
-            position: fixed;
-            top: 15%;
-            left: 0;
-            z-index: 1000;
-
-            width: 8%;
-            height: 70%;
-
-            border: none;
-            border-radius: 0 15px 15px 0;
-
-            background: linear-gradient(to bottom, #e21111, #ee7116, #bc6f15);
-        }
-    }
-
-    main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-
-        width: 100%;
+        width: 50%;
         height: 100%;
 
-        & .section1 {
-            width: 50%;
-            height: 100%;
+        background-color: #ff914d;
 
-            background-color: #5d2828;
-        }
-
-        & .section2 {
+        & .form {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: start;
             flex-direction: column;
 
-            width: 50%;
-            height: 100%;
+            width: 60%;
+            margin: auto;
+            padding: 15px;
 
-            background-color: #ff914d;
+            border: 1px solid black;
+            border-radius: 15px;
+            background-color: #ffa3a7;
 
-            & .form {
+            color: white;
+
+            & .title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: calc(100% + 30px);
+                height: 60px;
+
+                margin: -15px 0 0 -15px;
+
+                border: none;
+                border-radius: 12px 12px 0 0;
+                background-color: #bb3036;
+            }
+
+            & .Ccod {
+                align-self: center;
+                text-align: center;
+                width: fit-content;
+            }
+
+            & .Btn {
+                display: flex;
+                justify-content: space-around;
+                align-items: end;
+
+                width: 100%;
+                height: 10%;
+
+
+
+                & button {
+                    width: 20%;
+                    height: 80%;
+                    font-size: 18px;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                }
+
+                & .Btn-Approve {
+                    background-color: #07a358;
+                }
+
+                & .Btn-Cancel {
+                    background-color: #ff5757;
+                }
+            }
+
+            & input {
+                width: 50%;
+                height: 25px;
+
+                border: none;
+                border-radius: 10px;
+            }
+
+            & .dados {
                 display: flex;
                 justify-content: center;
                 align-items: start;
                 flex-direction: column;
 
-                width: 60%;
+                width: 90%;
                 margin: auto;
-                padding: 15px;
+                padding: 20px;
 
                 border: 1px solid black;
                 border-radius: 15px;
-                background-color: #ffa3a7;
 
-                color: white;
-
-                & .title {
+                & .divisao1,
+                .divisao2 {
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    width: calc(100% + 30px);
-                    height: 60px;
-
-                    margin: -15px 0 0 -15px;
-
-                    border: none;
-                    border-radius: 12px 12px 0 0;
-                    background-color: #bb3036;
-                }
-
-                & #Ccod{
-                    align-self: center;
-                    text-align: center;
-                    width: fit-content;
-                }
-
-                & .Btn {
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: end;
+                    justify-content: space-between;
+                    align-items: start;
+                    flex-direction: row;
 
                     width: 100%;
-                    height: 10%;
 
-
-
-                    & button {
-                        width: 20%;
-                        height: 80%;
-                        font-size: 18px;
-                        border: none;
-                        border-radius: 10px;
-                        cursor: pointer;
-                    }
-
-                    & .Btn-Approve {
-                        background-color: #07a358;
-                    }
-
-                    & .Btn-Cancel {
-                        background-color: #ff5757;
-                    }
-                }
-
-                & input {
-                    width: 50%;
-                    height: 25px;
-
-                    border: none;
-                    border-radius: 10px;
-                }
-
-                & .dados {
-                    display: flex;
-                    justify-content: center;
-                    align-items: start;
-                    flex-direction: column;
-
-                    width: 90%;
-                    margin: auto;
-                    padding: 20px;
-
-                    border: 1px solid black;
-                    border-radius: 15px;
-
-                    & .divisao1,
-                    .divisao2 {
+                    & .labelInput {
                         display: flex;
-                        justify-content: space-between;
-                        align-items: start;
-                        flex-direction: row;
-
-                        width: 100%;
-
-                        & .labelInput {
-                            display: flex;
-                            flex-direction: column;
-                        }
+                        flex-direction: column;
                     }
                 }
             }

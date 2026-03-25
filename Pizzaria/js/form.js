@@ -6,8 +6,8 @@ function FormularioCliente1() {
                         <h2>Cadastro de Usuário: </h2>
                     </div>
 
-                    <label id="Ccod" for="Ccod">Código</label>
-                    <input id="Ccod" type="text" size="10" value="1" readonly>
+                    <label class="Ccod" for="Ccod">Código</label>
+                    <input class="Ccod" id="Ccod" type="text" size="10" value="1" readonly>
 
                     <br>
 
@@ -83,7 +83,7 @@ function FormularioCliente1() {
                     <div class="Btn">
                         
                         <button class="Btn-Cancel" onclick="Cancelar()" type="reset">Cancelar</button>
-                        <button class="Btn-Approve" onclick="Prosseguir()" type="submit">Prosseguir</button>
+                        <button class="Btn-Approve" onclick="Prosseguir()" type="button">Prosseguir</button>
                         
                     </div>
                     `
@@ -115,8 +115,10 @@ function FormularioCliente2() {
                     <br>
 
                     <div class="Btn">
-                        <button onclick="Prosseguir()" type="submit">Prosseguir</button>
+                        
                         <button onclick="Cancelar()" type="reset">Cancelar</button>
+                        <button onclick="Prosseguir()" type="submit">Prosseguir</button>
+                    
                     </div>
                     `
 }
