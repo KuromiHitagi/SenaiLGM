@@ -169,24 +169,3 @@ main {
         }
     }
 }
-
-footer {
-    background-color: black !important;
-    color: white !important;
-
-    & h4 {
-        color: rgb(101, 101, 146);
-    }
-
-    & p {
-        color: rgb(101, 101, 146);
-
-        & a {
-            color: rgb(56, 56, 90);
-        }
-    }
-
-    & .footer-link {
-        border: solid 1px white !important;
-    }
-}
