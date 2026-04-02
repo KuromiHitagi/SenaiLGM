@@ -1,12 +1,19 @@
 let contador = 0;
 let listaUsuarios = [];
 
+/*
+Função para salvar os dados básicos do usuário
+*/
 function SalvarNoSession(objetoUsuario) {
     // Transformamos o objeto em String para o SessionStorage aceitar
     const dadosEmString = JSON.stringify(objetoUsuario);
     sessionStorage.setItem("usuarioTemporario", dadosEmString);
 }
 
+
+/*
+Função para carregar os dados básicos do usuário
+*/
 function CarregarDados() {
     const dadosSalvos = sessionStorage.getItem("usuarioTemporario");
 
@@ -21,6 +28,9 @@ function CarregarDados() {
     }
 }
 
+/*
+Função para avançar o formulário
+*/
 function Prosseguir() {
     // 1. Captura os dados da tela
     const novoUsuario = {
@@ -41,14 +51,21 @@ function Prosseguir() {
     Decidir();
 }
 
+/*
+Função para retroceder o formulário
+*/
 function Cancelar() {
     contador -= 1;
     if (contador < 0) contador = 0;
     Decidir();
 }
 
+/*
+Função para decidir se Prossegue ou Retrocede o formulário
+*/
 function Decidir() {
     if (contador == 0) {
+        imagePizza();
         FormularioCliente1();
         CarregarDados();
     } else if (contador == 1) {

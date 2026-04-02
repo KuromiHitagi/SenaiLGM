@@ -1,5 +1,3 @@
-
-
 function FormularioCliente1() {
     const form = document.getElementById("form")
 
@@ -13,50 +11,34 @@ function FormularioCliente1() {
 
                     <br>
 
-                    <label for="Cnome">Nome:</label>
-                    <input id="Cnome" type="text" maxLength="45" size="50" >
-
-                    <br>
-
-                    <label for="Cemail">Email:</label>
-                    <input id="Cemail" type="email" maxLength="45" size="50" >
-
-                    <br>
-
-                    <label for="Cpassword">Senha:</label>
-                    <input id="Cpassword" type="password" maxLength="45" size="50" >
-
-                    <br>
-
-                    <div class="dados">
-                    
-                        <div class="divisao1">
-
-                            <div class="labelInput">
+                    <div class="dados"> 
+                        <div class="labelInput">
+                            <label for="Cnome">Nome:</label>
+                            <input id="Cnome" type="text" maxLength="45" size="50" >
+                        </div>
                         
-                                <label for="Cidade">Idade:</label>
-                                <input id="Cidade" type="number" min="18" max="100" >
-                            
-                            </div>
-                            
+                        
 
-                            <div class="labelInput">
-                            
-                                <label for="Cdata">Data de Nascimento:</label>
-                                <input id="Cdata" type="date" >
-                            
-                            </div>
-                            
+                        <div class="labelInput">
+                            <label for="Cemail">Email:</label>
+                            <input id="Cemail" type="email" maxLength="45" size="50" >
+                        </div>
+                        
+                        
 
-                            <div class="labelInput">
-
-                                <label for="Cfoto">Foto:</label>
-                                <input id="Cfoto" type="file" accept="image/*"> 
-                            
-                                </div>
-                            
+                        <div class="labelInput">
+                            <label for="Cpassword">Senha:</label>
+                            <input id="Cpassword" type="password" maxLength="45" size="50" >
                         </div>
 
+                        
+                        
+                        <div class="labelInput">
+                            <label for="CconfirmPassword">Confirmar Senha:</label>
+                            <input id="CconfirmPassword" type="password" maxLength="45" size="50" >
+                        </div>
+
+                        <br>
                     </div>
 
                     <div class="Btn">
