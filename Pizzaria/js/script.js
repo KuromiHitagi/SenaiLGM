@@ -11,6 +11,10 @@ function SalvarNoSession(objetoUsuario) {
 }
 
 
+function DeleteNoSession() {
+    sessionStorage.clear()
+}
+
 /*
 Função para carregar os dados básicos do usuário
 */
@@ -56,7 +60,12 @@ Função para retroceder o formulário
 */
 function Cancelar() {
     contador -= 1;
-    if (contador < 0) contador = 0;
+    
+    if (contador < 0) {
+        contador = 0;
+        DeleteNoSession();
+    }
+    
     Decidir();
 }
 
