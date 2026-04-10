@@ -20,10 +20,11 @@ footer.innerHTML = `
     </div>
 `;
 
-const btnModo = document.getElementById("btn-Modo")
 const modo = document.getElementById("modo")
 let contador = 0;
 
+
+// Função para verificar o modo de cor da página
 function verify() {
     if(contador === 0) {
         modo.innerText = "Escuro"
@@ -31,11 +32,14 @@ function verify() {
         modo.innerText = "Claro"
     }
 }
+verify();
 
+// A cada 500 milisegundos chama a função verify()
 setInterval(() => {
     verify();
 }, 500)
 
+// Função que define o modo da página
 function Modo() {
     if(contador === 0) {
         footer.classList.remove("black")

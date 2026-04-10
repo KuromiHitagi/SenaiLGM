@@ -19,6 +19,10 @@ body {
 }
 
 main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
     width: 100%;
     height: 89.3%;
 
@@ -32,12 +36,10 @@ main {
 }
 
 .lista-ordenada {
-    position: absolute;
-    top: 17%;
-    left: 10%;
+
 
     width: 15%;
-    height: 25%;
+    height: 50%;
     padding: 20px;
 
     border-radius: 15px;
@@ -45,16 +47,38 @@ main {
     background-color: rgb(73, 73, 73);
 
     & .title {
+        position: relative;
+
         width: 100%;
         height: max-content;
-        text-align: center;
 
+        text-align: center;
+        cursor: default;
+        z-index: 1;
         transition: all ease-in-out 0.2s;
+
+        &::after{
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 45%;
+
+            width: 0;
+            height: 4px;
+
+            background-color: rgb(160, 90, 58);
+            transition: all ease-in-out 0.3s;
+            pointer-events: none;
+        }
 
         &:hover {
             transform: scale(115%);
-            text-decoration: line-through;
             background-color: rgb(41, 41, 41);
+
+            &::after{
+                width: 100%;
+            }
         }
     }
 
@@ -62,12 +86,21 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
+        
+        padding: 0;
 
         width: 100%;
-        height: 80%;
+        height: 90%;
 
         & ol {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-direction: column;
+            gap: 20px;
+
             list-style-type: circle;
+            font-size: 22px;
             width: 100%;
             height: max-content;
             color: orange;
@@ -75,7 +108,7 @@ main {
             & li {
                 width: max-content;
                 height: 100%;
-                margin: 5px 0px 0px 50px;
+                margin: 5px 0px 0px 20%;
 
                 & a {
                     text-decoration: none;
@@ -86,10 +119,10 @@ main {
                     &:hover {
                         margin: 10px;
                         padding: 5px;
-                        font-size: 20px;
+                        font-size: 28px;
                         color: rgb(138, 46, 46);
                         text-decoration: line-through;
-                        text-decoration-color: rgb(197, 43, 43);
+                        text-decoration-color: rgb(110, 35, 35);
                         background-color: rgb(41, 41, 41);
                     }
                 }
