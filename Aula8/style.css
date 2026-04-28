@@ -6,6 +6,7 @@
 
 body {
     min-width: 100%;
+    min-height: none;
     height: 100vh;
     overflow-x: hidden;
     color: white;
@@ -22,7 +23,7 @@ header {
     flex-direction: row;
 
     width: 100%;
-    height: 20%;
+    min-height: 20%;
 
     border-bottom: 4px solid rgba(2, 59, 28, 0.603);
     background-color: rgb(11, 155, 11);
@@ -85,7 +86,7 @@ main {
     flex-direction: column;
 
     width: 100%;
-    height: 80%;
+    min-height: 80%;
 
     color: black;
     background-color: rgb(253, 248, 242);
@@ -97,7 +98,7 @@ main {
         flex-direction: column;
 
         width: 100%;
-        height: 40%;
+        height: 200px;
 
         color: white;
         background-color: rgb(27, 133, 27);
@@ -128,7 +129,9 @@ main {
         flex-direction: column;
 
         margin-top: 3%;
+        margin-bottom: 3%;
         width: 100%;
+        height: 300px;
 
         .h1 {
             color: rgb(86, 112, 78);
@@ -184,6 +187,75 @@ main {
                 .h3 {
                     color: green;
                 }
+            }
+        }
+    }
+
+    .sectionProdutos {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 50px 0;
+
+        .carrosselContainer {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            max-width: 1300px;
+            /* Um pouco maior para caber os botões nas laterais */
+        }
+
+        .carrosselWrapper {
+            width: 100%;
+            max-width: 1100px;
+            /* O limite que você pediu */
+            overflow: hidden;
+            /* Faz o conteúdo sumir ao passar do limite */
+            margin: 0 auto;
+        }
+
+        .carrossel {
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+
+            transition: transform 0.5s ease-in-out;
+            width: max-content;
+        }
+
+        .card {
+            min-width: 250px;
+            /* Define um tamanho fixo para os cards */
+            background: #eee;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+
+            .cardImg {
+                img {
+                    width: 240px;
+                    height: 180px;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        /* Estilo dos Botões */
+        .prev,
+        .next {
+            background-color: rgb(27, 133, 27);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 20px;
+            z-index: 10;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: rgb(226, 110, 33);
             }
         }
     }
