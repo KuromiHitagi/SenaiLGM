@@ -4,9 +4,10 @@ function imagePizza() {
     const divImage = document.getElementById("image");
     divImage.innerHTML = `
                         <div class="tooltip">
-                            <p>Bem-Vindo à Pizzaria Forno&Código</p>
+                            <p>Bem-Vindo(a) à Pizzaria Forno&Código</p>
                         </div>
-                        <img class="imgPizza" src="../src/Images/pizza-icon.png" alt="Icon"/>
+                        <img class="imgPizza" src="./images/pizza-icon.png" alt="Pizza-icon"/>
                         `;
 }
+
 imagePizza();
