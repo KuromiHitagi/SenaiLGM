@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sabores da Terra - Produtos orgânicos Artesanais">
+
+    <link rel="stylesheet" href="../Aulas/css/footerStyle.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Aula 8 - Carrinho</title>
+</head>
+
+<body>
+
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <header class="header">
+
+        <div class="container">
+
+            <div class="logo-area">
+                <h1 class="logo">🌱Sabores da Terra</h1>
+                <p class="tagline">Produtos Orgânicos Artesanais</p>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#spacement">Início</a></li>
+                    <li><a href="./index.html">Home</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ESPAÇAMENTO -->
+    <div id="spacement" class="spacement">
+        <!-- Div somente para substituir o espaçamento do Header -->
+    </div>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <section>
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="cont">
+                    <!-- Aqui será renderizado o carrinho do arquivo "JSON.js" -->
+                </tbody>
+
+                <tfoot id="valor-total">
+                    <!-- Aqui será renderizado o valor final do arquivo "JSON.js" -->
+                </tfoot>
+
+            </table>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <!-- Aqui será renderizado o footer -->
+    </footer>
+
+</body>
+<script src="../Aulas/footer.js"></script>
+<script src="./js/JSON.js"></script>
+
+</html>

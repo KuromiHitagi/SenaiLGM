@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sabores da Terra - Produtos orgânicos Artesanais">
-    <meta name="keywords" content="">
 
     <link rel="stylesheet" href="../Aulas/css/footerStyle.css">
     <link rel="stylesheet" href="./style.css">
@@ -26,10 +25,11 @@
 
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#">Produtos</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="#spacement">Início</a></li>
+                    <li><a href="#inicio">Sobre</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="./carrinho.html">Carrinho</a></li>
                 </ul>
             </nav>
 
@@ -39,7 +39,7 @@
 
 
     <!-- ESPAÇAMENTO -->
-    <div class="spacement">
+    <div id="spacement" class="spacement">
         <!-- Div somente para substituir o espaçamento do Header -->
     </div>
 
@@ -108,85 +108,7 @@
                 <div class="carrosselWrapper">
 
                     <div class="carrossel" id="track">
-
-                        <div class="card">
-
-                            <div class="cardImg">
-                                <img src="" alt="">
-                            </div>
-
-                            <div class="cardCont">
-                                <h3>Castanha do Pará</h3>
-                                <h3 class="cardPreco">R$45,90</h3>
-                            </div>
-
-                        </div>
-
-                        <div class="card">
-
-                            <div class="cardImg">
-                                <img src="" alt="">
-                            </div>
-
-                            <div class="cardCont">
-                                <h3>Amendoim</h3>
-                                <h3 class="cardPreco">R$7,50</h3>
-                            </div>
-
-                        </div>
-
-                        <div class="card">
-
-                            <div class="cardImg">
-                                <img src="" alt="">
-                            </div>
-
-                            <div class="cardCont">
-                                <h3>Cacau em Pó</h3>
-                                <h3 class="cardPreco">R$22,50</h3>
-                            </div>
-
-                        </div>
-
-                        <div class="card">
-
-                            <div class="cardImg">
-                                <img src="" alt="">
-                            </div>
-
-                            <div class="cardCont">
-                                <h3>Lichia</h3>
-                                <h3 class="cardPreco">R$30,00</h3>
-                            </div>
-
-                        </div>
-
-                        <div class="card">
-
-                            <div class="cardImg">
-                                <img src="https://cdn.awsli.com.br/2/2987/produto/183198726/f882f9bbb1.jpg" alt="matcha">
-                            </div>
-
-                            <div class="cardCont">
-                                <h3>Matchá Puro</h3>
-                                <h3 class="cardPreco">R$75,90</h3>
-                            </div>
-
-                        </div>
-
-                        <div class="card">
-
-                            <div class="cardImg">
-                                <img src="" alt="">
-                            </div>
-
-                            <div class="cardCont">
-                                <h3>Feijão com Farinha</h3>
-                                <h3 class="cardPreco">R$13,58</h3>
-                            </div>
-
-                        </div>
-
+                        <!-- Aqui está sendo renderizado os produtos do "products.js" -->
                     </div>
 
                 </div>
@@ -212,5 +134,8 @@
 
 </body>
 <script src="../Aulas/footer.js"></script>
-<script src="./script.js"></script>
+<script src="./js/products.js"></script>
+<script src="./js/JSON.js"></script>
+<script src="./js/script.js"></script>
+
 </html>
