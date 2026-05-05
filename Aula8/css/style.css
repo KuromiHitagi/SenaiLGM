@@ -209,11 +209,13 @@ main {
 
         .carrosselWrapper {
             height: 400px;
+
             width: 100%;
             max-width: 1200px;
-            overflow: hidden;
+
             padding: 60px 0px 0px 20px;
-            /* Faz o conteúdo sumir ao passar do limite */
+
+            overflow: hidden; /* Faz o conteúdo sumir ao passar do limite */
             margin: 0 auto;
         }
 

@@ -27,9 +27,9 @@ function showCarrinho() {
     for(let i = 0; i < carrinho.length; i++) {
         tabela.innerHTML += `
             <tr>
-                <td>${carrinho[i].nome}</td>
-                <td>${carrinho[i].preco.toFixed(2)}</td>
-                <td>
+                <td style="text-align: left;">${carrinho[i].nome}</td>
+                <td style="text-align: center;">${carrinho[i].preco.toFixed(2)}</td>
+                <td style="text-align: center;">
                     <button onclick="delCarrinho(${i})">X</button>
                 </td>
             </tr>
@@ -40,8 +40,8 @@ function showCarrinho() {
 
     valor.innerHTML = `
         <tr>
-            <td colspan="3" style="text-align: right;"> <strong>Total:</strong></td>
-            <td colspan="2">R$${valorTotal.toFixed(2)}</td>
+            <td style="text-align: right;"> <strong style="border: none;">Total:</strong></td>
+            <td colspan="2" style="color: #3f3f3f !important; text-shadow: none !important;">R$${valorTotal.toFixed(2)}</td>
         </tr>
     `;
 }
