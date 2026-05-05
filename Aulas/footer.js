@@ -34,11 +34,6 @@ function verify() {
 }
 verify();
 
-// A cada 500 milisegundos chama a função verify()
-setInterval(() => {
-    verify();
-}, 500)
-
 // Função que define o modo da página
 function Modo() {
     if(contador === 0) {
@@ -50,4 +45,6 @@ function Modo() {
     }
 
     contador = (contador === 0) ? 1 : 0;
+    
+    verify();
 }
