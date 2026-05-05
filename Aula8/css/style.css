@@ -217,7 +217,7 @@ main {
         .carrossel {
             display: flex;
             flex-direction: row;
-            gap: 70px;
+            gap: 30px;
 
             transition: transform 0.5s ease-in-out;
             width: max-content;
@@ -237,6 +237,7 @@ main {
                     height: 180px;
                     border-radius: 10px;
                 }
+
                 transition: all ease-in-out 0.2s;
 
                 &:hover {
@@ -244,7 +245,7 @@ main {
                 }
             }
 
-            .cardCont{
+            .cardCont {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -252,13 +253,13 @@ main {
 
                 margin-top: 5px;
 
-                .action{
+                .action {
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
                     width: 80%;
 
-                    .cardPreco{
+                    .cardPreco {
                         color: rgb(9, 156, 9);
                     }
                 }
