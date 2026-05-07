@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet" />
 
     <title>Forno&Código</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
@@ -27,7 +27,7 @@
                 <div class="acoes-login">
                     <a href="#">Login</a>
                     <a href="#">
-                        <img src="../src/Images/user-icon.png" width="149" alt="user-icon">
+                        <img src="../src/Images/user-icon.png" width="149" alt="user-icon" />
                     </a>
                 </div>
             </div>
@@ -39,18 +39,107 @@
     </div>
 
     <main>
+        <section class="start">
+            <a href="#">
+                <img src="https://superpizzapan.com.br/wp-content/uploads/2025/10/a-vida-e-massa.jpg"
+                    alt="pizza-comum" />
+            </a>
 
-        <section>
-            <img src="https://superpizzapan.com.br/wp-content/uploads/2025/10/a-vida-e-massa.jpg" alt="pizza-comum">
+            <div class="btn">
+                <button onclick="troll()">Executar pedido</button>
+            </div>
 
-            <button>Executar pedido</button>
         </section>
 
+        <section class="about">
+            <img src="https://neilpatel.com/wp-content/uploads/2019/09/codigos-html-para-paginas-web-1.webp"
+                alt="html-code">
+
+            <div class="cards">
+                <article class="1">
+                    <p class="title">
+                        {Código limpo, Sabor impecável!}
+                    </p>
+
+                    <p class="content">
+                        Refatoramos o conceito de pizzaria. Aqui, cada ingrediente é selecionado sem "dívida técnica",
+                        garantindo uma experiência sem bugs do início ao fim.
+                    </p>
+                </article>
+
+                <article class="2">
+                    <p class="title">
+                        #Deploy em Tempo Real!
+                    </p>
+
+                    <p class="content">
+                        Chega de gargalos no processo. Nosso pipeline de entrega é otimizado para que sua pizza chegue
+                        quentinha, antes mesmo do próximo commit.
+                    </p>
+                </article>
+
+                <article class="3">
+                    <p class="title">
+                        ⌘Menu Colaborativo!
+                    </p>
+
+                    <p class="content">
+                        Adoramos ouvir o feedback da nossa comunidade. Atualizamos nosso cardápio constantemente com as
+                        sugestões dos usuários para manter o sistema sempre atualizado.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="final">
+            <a href="#">Veja nosso repositório</a>
+        </section>
     </main>
 
     <footer>
+        <div class="social-media">
+            <div class="whatsapp">
+                <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="whatsapp-icon">
+            </div>
 
+            <div class="github">
+                <img src="../src/Images/github-icon.png" style="background-color: white;" alt="github-icon">
+            </div>
+
+            <div class="instagram">
+                <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png"
+                    alt="instagram-icon">
+            </div>
+        </div>
+
+        <div class="address">
+            <div class="content">
+                <p>localhost:5500 / rua: 8gb ram / 128</p>
+            </div>
+
+            <div class="copyright">
+                <p>© 2026 Forno&Código - Feito com muita cafeína por [Nicolas Freitas]. <br>
+                    // Todos os direitos reservados.</p>
+            </div>
+        </div>
+
+        <div class="time">
+
+        </div>
     </footer>
 </body>
+<script>
+    let cont = 0;
+
+    function troll() {
+        if (cont == 0) {
+            alert(`o verdadeiro botão são as pizzas que fizemos pelo caminho...`);
+            cont++;
+        } else if (cont == 1) {
+            alert(`a pizza é o verdadeiro botão`);
+            cont--;
+        }
+    }
+</script>
 
 </html>
