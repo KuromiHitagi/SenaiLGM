@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet" />
 
-    <title>Forno&Código</title>
+    <title>Forno&Código - main</title>
     <link rel="stylesheet" href="./css/style.css" />
 </head>
 
@@ -21,8 +21,8 @@
 
             <div class="acoes">
                 <ul>
-                    <li><a href="">Cardápio</a></li>
-                    <li><a href="">Início</a></li>
+                    <li><a href="./html/menu.html">Cardápio</a></li>
+                    <li><a href="#start">Início</a></li>
                 </ul>
                 <div class="acoes-login">
                     <a href="#">Login</a>
@@ -34,7 +34,7 @@
         </nav>
     </header>
 
-    <div class="spacement">
+    <div class="spacement" id="start">
         <!-- Espaçamento entre o 'header' e o 'main' -->
     </div>
 
@@ -46,7 +46,7 @@
             </a>
 
             <div class="btn">
-                <button onclick="troll()">Executar pedido</button>
+                <button onclick="window.location.href='./html/menu.html'">Executar pedido</button>
             </div>
 
         </section>
@@ -96,48 +96,71 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="footer">
         <div class="social-media">
             <div class="whatsapp">
-                <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="whatsapp-icon">
+                <a href="#footer" onclick="avisar(0)">
+                    <img id="socialImg" src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="whatsapp-icon">
+                </a>
+
+                <p>(11) 4002-8922</p>
             </div>
 
             <div class="github">
-                <img src="../src/Images/github-icon.png" style="background-color: white;" alt="github-icon">
+                <a href="https://github.com/KuromiHitagi/" target="_blank">
+                    <img src="../src/Images/github-icon.png" style="background-color: white;" alt="github-icon">
+                </a>
+
+                <p>/KuromiHitagi</p>
             </div>
 
             <div class="instagram">
-                <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png"
-                    alt="instagram-icon">
+                <a href="#footer" onclick="avisar(1)">
+                    <img id="socialImg" src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="instagram-icon">
+                </a>
+
+                <p>@forno&codigo</p>
             </div>
         </div>
 
         <div class="address">
             <div class="content">
-                <p>localhost:5500 / rua: 8gb ram / 128</p>
+                <a href="#footer" onclick="avisar(2)"><p>endereço/ rua: 8gb ram - número: 128</p></a>
             </div>
 
             <div class="copyright">
-                <p>© 2026 Forno&Código - Feito com muita cafeína por [Nicolas Freitas]. <br>
-                    // Todos os direitos reservados.</p>
+                <p>© 2026 Forno&Código - Feito com muita cafeína por [Nicolas Freitas]. </p>
+                <p>// Todos os direitos reservados.</p>
             </div>
         </div>
 
         <div class="time">
-
+            <a href="#footer" onclick="avisar(3)"><p>uptime: 18:00 - 23:59</p></a>
         </div>
     </footer>
 </body>
 <script>
-    let cont = 0;
+    // let cont = 0;
 
-    function troll() {
-        if (cont == 0) {
-            alert(`o verdadeiro botão são as pizzas que fizemos pelo caminho...`);
-            cont++;
-        } else if (cont == 1) {
-            alert(`a pizza é o verdadeiro botão`);
-            cont--;
+    // function troll() {
+    //     if (cont == 0) {
+    //         alert(`o verdadeiro botão são as pizzas que fizemos pelo caminho...`);
+    //         cont++;
+    //     } else if (cont == 1) {
+    //         alert(`a pizza é o verdadeiro botão`);
+    //         cont--;
+    //     }
+    // }
+
+    function avisar(num) {
+        if (num == 0) {
+            alert("Erro 404: Whatsapp não encontrado no servidor. (Este é um projeto de demonstração!)");
+        } else if (num == 1) {
+            alert("Erro 404: Instagram não encontrado no servidor. (Este é um projeto de demonstração!)");
+        } else if (num == 2) {
+            alert("Erro 404: Endereço não encontrado no servidor. (Este é um projeto de demonstração!)");
+        } else if (num == 3) {
+            alert("Este é o horário de funcionamento..");
         }
     }
 </script>

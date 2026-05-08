@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    letter-spacing: 4px;
+    font-family: "Fira Code", monospace;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    max-height: none;
+    overflow-x: hidden;
+    background-color: #272424;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 141px;
+
+    background: linear-gradient(to left, #5d2828, #9f3939);
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+
+        width: 100%;
+        height: 100%;
+
+        .logotipo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-left: 50px;
+            height: 100%;
+            width: auto;
+
+            p {
+                font-size: 44px;
+                color: #ffbd59;
+                text-shadow: -2px 1px 3px rgba(0, 0, 0, 1);
+            }
+        }
+
+        .acoes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+
+            width: auto;
+            height: 100%;
+
+            font-size: 30px;
+            margin-right: 50px;
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 50px;
+                width: auto;
+
+                margin-right: 70px;
+
+                list-style-type: none;
+
+                li {
+                    width: auto;
+                }
+
+                a {
+                    display: inline-block;
+                    color: white;
+                    text-decoration: none;
+                    transition: all ease 0.3s;
+                    border: none;
+                    border-radius: 15px;
+                    padding: 2px 2px 2px 4px;
+
+                    &:hover {
+                        color: #ffbd59;
+                        background-color: #27242485;
+                        transform: translateY(-5px);
+                    }
+                }
+            }
+
+            .acoes-login {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                height: 100%;
+
+                a {
+                    display: inline-block;
+                    color: white;
+                    text-decoration: none;
+
+                    transition: all ease 0.3s;
+                    border: none;
+                    border-radius: 15px;
+                    padding: 2px 2px 2px 4px;
+
+                    &:hover {
+                        color: #ffbd59;
+                        background-color: #27242485;
+                        transform: translateY(-5px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.spacement {
+    height: 261px;
+    background-color: #272424;
+}

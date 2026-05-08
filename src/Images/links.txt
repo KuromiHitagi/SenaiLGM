@@ -1,7 +1,15 @@
-Pizza Comum -> https://superpizzapan.com.br/wp-content/uploads/2025/10/a-vida-e-massa.jpg
-Código HTML -> https://neilpatel.com/wp-content/uploads/2019/09/codigos-html-para-paginas-web-1.webp
-Pizza Margherita -> https://cdn.casaeculinaria.com/wp-content/uploads/2023/11/21140713/Pizza-marguerita.webp
-Pizza Calabresa -> https://cdn0.tudoreceitas.com/pt/posts/9/8/3/pizza_calabresa_e_mussarela_4389_orig.jpg
-github icon -> https://t2.tudocdn.net/510706?w=567&h=340
-instagram -> https://gkpb.com.br/wp-content/uploads/2016/05/novo-logo-instagram-blog-gkpb-destaque.jpg
-whatsapp -> https://cdn-icons-png.flaticon.com/128/3670/3670051.png
+Lading Page:
+    Pizza -> https://superpizzapan.com.br/wp-content/uploads/2025/10/a-vida-e-massa.jpg
+    Código HTML -> https://neilpatel.com/wp-content/uploads/2019/09/codigos-html-para-paginas-web-1.webp
+
+    Footer:
+        github icon -> https://t2.tudocdn.net/510706?w=567&h=340
+        instagram -> https://gkpb.com.br/wp-content/uploads/2016/05/novo-logo-instagram-blog-gkpb-destaque.jpg
+        whatsapp -> https://cdn-icons-png.flaticon.com/128/3670/3670051.png
+
+Menu:
+    Pizza -> https://cdn-icons-png.flaticon.com/128/1404/1404945.png
+
+JSON:
+    Pizza Margherita -> https://cdn.casaeculinaria.com/wp-content/uploads/2023/11/21140713/Pizza-marguerita.webp
+    Pizza Calabresa -> https://cdn0.tudoreceitas.com/pt/posts/9/8/3/pizza_calabresa_e_mussarela_4389_orig.jpg
