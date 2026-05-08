@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/menu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Forno&Codigo - menu</title>
 </head>
 
@@ -25,7 +27,7 @@
                 <div class="acoes-login">
                     <a href="./login.html">Login</a>
                     <a href="#">
-                        <img src="../src/Images/user-icon.png" width="149" alt="user-icon" />
+                        <img src="../../src/Images/user-icon.png" width="149" alt="user-icon" />
                     </a>
                 </div>
             </div>
@@ -37,9 +39,50 @@
     </div>
 
     <main>
-        
+        <div class="swiper">
+            <div class="swiper-wrapper" id="swiper-wrapper">
+
+                <!-- <div class="swiper-slide" >
+                    <div class="card-pizza">
+                        <div class="pizza-img-wrapper">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Mussarela">
+                        </div>
+                        <h3 class="fira-code">Mussarela.js</h3>
+                        <p class="desc-log">Log: Sabor estável detectado...</p>
+                        <button class="btn-detalhes" onclick="abrirModal()">Ver Detalhes</button>
+                    </div>
+                </div> -->
+
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
     </main>
 
+
 </body>
+<script src="../js/JSON.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            320: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+        }
+    });
+
+    function abrirModal() {
+        alert("Abrindo log de sabor...");
+    }
+</script>
 
 </html>
