@@ -41,18 +41,7 @@
     <main>
         <div class="swiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
-
-                <!-- <div class="swiper-slide" >
-                    <div class="card-pizza">
-                        <div class="pizza-img-wrapper">
-                            <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Mussarela">
-                        </div>
-                        <h3 class="fira-code">Mussarela.js</h3>
-                        <p class="desc-log">Log: Sabor estável detectado...</p>
-                        <button class="btn-detalhes" onclick="abrirModal()">Ver Detalhes</button>
-                    </div>
-                </div> -->
-
+                <!-- Aqui serão renderizadas as pizzas do arquivo 'JSON', pela num carrossel feito pela biblioteca swiper -->
             </div>
 
             <div class="swiper-button-prev"></div>
@@ -60,6 +49,9 @@
         </div>
     </main>
 
+    <div id="modal" class="modal">
+        <!-- Esta div serve apenas para expandir os detalhes das pizzas do arquivo 'JSON' -->
+    </div>
 
 </body>
 <script src="../js/JSON.js"></script>
@@ -79,10 +71,6 @@
             1024: { slidesPerView: 3 }
         }
     });
-
-    function abrirModal() {
-        alert("Abrindo log de sabor...");
-    }
 </script>
 
 </html>

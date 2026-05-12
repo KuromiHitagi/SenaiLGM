@@ -373,8 +373,20 @@ footer {
         cursor: default;
     }
 
-    *{
+    * {
         transition: all ease 0.3s;
+    }
+
+    .grow:hover {
+        transform: scale(1.02);
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        #socialImg:hover {
+            opacity: 0.7;
+        }
     }
 
     .social-media {
@@ -404,18 +416,6 @@ footer {
             width: auto;
             min-width: 210px;
         }
-
-        &:hover {
-            transform: scale(1.02);
-
-            img:hover {
-                transform: scale(1.1);
-            }
-
-            #socialImg:hover{
-                opacity: 0.7;
-            }
-        }
     }
 
     .address {
@@ -432,7 +432,7 @@ footer {
                 color: white;
                 text-decoration: none;
 
-                &:hover{
+                &:hover {
                     opacity: 0.7;
                 }
             }
@@ -459,7 +459,7 @@ footer {
             text-decoration: none;
             margin-right: 5%;
 
-            p{
+            p {
                 cursor: pointer;
             }
         }

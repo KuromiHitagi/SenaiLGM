@@ -1,3 +1,13 @@
+@keyframes pulsar {
+    0% {
+        transform: scale(1.0);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -20,6 +30,12 @@ body {
     max-height: none;
     overflow-x: hidden;
     background-color: #272424;
+}
+
+.occult{
+    *{
+        opacity: 0.6;
+    }
 }
 
 header {
@@ -145,18 +161,16 @@ main {
     height: 100%;
 }
 
-/* Garante que o carrossel apareça na tela */
 .swiper {
     width: 100%;
     height: 500px;
-    /* Aumentei um pouco para o hover não cortar o card */
     margin-top: 50px;
 
-    /* Estilização dos botões de navegação dentro do swiper */
     .swiper-button-next,
     .swiper-button-prev {
         color: #ffbd59 !important;
         transition: transform 0.2s;
+        margin: 0px 20px;
 
         &:hover {
             transform: scale(1.2);
@@ -171,28 +185,41 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        /* Removi o max-width daqui para o Swiper controlar o espaçamento */
+
+        * {
+            cursor: default;
+            transition: all ease 0.3s;
+        }
+
+        .grow:hover {
+            transform: scale(1.1);
+        }
 
         .card-pizza {
             background: #2b2727;
-            border: 1px solid #ffbd59;
+            border: 1px solid #ffbd595b;
             border-radius: 20px;
+
             padding: 30px;
-            text-align: center;
+            max-width: 400px;
             width: 100%;
-            max-width: 280px;
-            /* O card sim tem tamanho fixo */
-            transition: all 0.3s ease;
-            font-family: 'Fira Code', monospace;
+
+            text-align: center;
+            transition: all 0.6s ease;
 
             &:hover {
                 transform: translateY(-10px);
-                box-shadow: 0px 10px 20px rgba(255, 189, 89, 0.2);
-                border-color: #ffffff;
+                box-shadow: 0px 10px 20px rgba(255, 189, 89, 0.3);
+                border: 1px solid #ffbd59;
+
+                .btn-detalhes {
+                    animation: pulsar 0.8s ease infinite alternate;
+                }
             }
 
             img {
-                width: 150px;
+                width: 200px;
+                border-radius: 15px;
                 margin-bottom: 10px;
             }
 
@@ -206,22 +233,25 @@ main {
                 font-size: 0.8rem;
                 margin-bottom: 20px;
                 line-height: 1.4;
+                width: 100%;
             }
 
             .btn-detalhes {
-                background: #ffbd59;
-                color: #2b2727;
+                background: #272020;
+                color: #a5a5a5;
                 border: none;
                 padding: 10px 20px;
                 border-radius: 5px;
                 font-weight: bold;
                 cursor: pointer;
-                transition: background 0.2s;
+                transition: all ease 0.6s;
 
                 &:hover {
-                    background: #ffffff;
+                    background-color: #ffbd59;
+                    color: #2b2727;
                 }
             }
         }
     }
 }
+
