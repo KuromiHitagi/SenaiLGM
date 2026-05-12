@@ -1,4 +1,28 @@
 let pizzas = [
+
+    /*
+    id: ,
+        nome: '',
+        preco: ,
+        imagem: '',
+        ingredientes: ``,
+        titulos: {
+            1: "",
+            2: "",
+            3: ""
+        },
+        descricoes: {
+            1: "",
+            2: "",
+            3: {
+                1: "Dependencies: > * Núcleo: Massa de Pizza e Molho de Tomate",
+                2: "",
+                3: "",
+                4: ""
+            }
+        }
+    */
+
     {
         id: 1,
         nome: 'Margherita',
@@ -14,20 +38,35 @@ let pizzas = [
             1: "A base de todo grande sistema. Molho de tomate artesanal, muçarela de alta qualidade e manjericão fresco. Simples, funcional e sem erros de execução.",
             2: "O Hello World das pizzas. Criada com uma arquitetura leve de massa italiana, camadas de queijo derretido e finalizada com folhas de manjericão orgânico. O clássico que nunca sai de moda (e nunca quebra o build).",
             3: {
-                1: "Documentação: > * Core: Molho de tomate pelati. ",
-                2: "Dependencies: Mussarela e manjericão fresco. ",
-                3: "Output: Sabor equilibrado e bordas crocantes. ",
-                4: "Status: 100% Compatível com sua fome."
+                1: "Dependencies: > * Núcleo: Massa de Pizza e Molho de Tomate. ",
+                2: "Mussarela, ",
+                3: "Manjericão,",
+                4: "Azeite;"
             }
         }
-    }/*,
+    },
 
     {
         id: 2,
         nome: 'Calabresa',
-        preco: 50.0,
+        preco: 40.0,
         imagem: 'https://cdn0.tudoreceitas.com/pt/posts/9/8/3/pizza_calabresa_e_mussarela_4389_orig.jpg',
-        ingredientes: `Massa de Pizza, Molho de Tomate, Mussarela, Manjericão, Azeite;`
+        ingredientes: `Massa de Pizza, Molho de Tomate, Mussarela, Manjericão, Azeite;`,
+        titulos: {
+            1: "Calabresa Hotfix",
+            2: "Calabresa.cpp (Robusta)",
+            3: "sudo apt-get install calabresa"
+        },
+        descricoes: {
+            1: "A solução rápida e eficiente para qualquer nível de fome. Calabresa fatiada premium. Um clássico que roda liso em qualquer ambiente, sem necessidade de configuração.",
+            2: "Para quem precisa de performance e sustância. Base sólida de molho de tomate, camada generosa de calabresa selecionada e um toque de orégano. Uma pizza de baixo nível (direto ao ponto) e alta satisfação.",
+            3: {
+                1: "Dependencies: > * Núcleo: Massa de Pizza e Molho de Tomate",
+                2: "Calabresa,",
+                3: "Mussarela,",
+                4: "Orégano;"
+            }
+        }
     },
 
     {
@@ -35,7 +74,22 @@ let pizzas = [
         nome: 'Mussarela',
         preco: 50.0,
         imagem: 'https://superpizzapan.com.br/wp-content/uploads/2025/10/a-vida-e-massa.jpg',
-        ingredientes: `Massa de Pizza, Molho de Tomate, Mussarela, Manjericão, Azeite;`
+        ingredientes: `Massa de Pizza, Molho de Tomate, Mussarela, Manjericão, Azeite;`,
+        titulos: {
+            1: "Mussarela: Standard Lib",
+            2: "Mussarela: Kernel",
+            3: "CMD"
+        },
+        descricoes: {
+            1: "A biblioteca padrão que todo sistema precisa ter. Combinamos a cremosidade do queijo selecionado com um molho artesanal sobre uma massa de longa fermentação. Sem erros de execução.",
+            2: "O núcleo estável de tudo o que fazemos. Selecionamos os melhores laticínios para um derretimento uniforme e o sabor autêntico de uma pizzaria italiana. Simples, impecável e sem bugs de sabor.",
+            3: {
+                1: "Dependencies: > * Núcleo: Massa de Pizza e Molho de Tomate",
+                2: "",
+                3: "",
+                4: ""
+            }
+        }
     },
 
     {
@@ -43,8 +97,23 @@ let pizzas = [
         nome: 'Frango com Catupiry',
         preco: 50.0,
         imagem: 'https://receitasdepesos.com.br/wp-content/uploads/2023/09/pizza-de-frango.jpg',
-        ingredientes: `Massa de Pizza, Molho de Tomate, Mussarela, Manjericão, Azeite;`
-    }*/
+        ingredientes: `Massa de Pizza, Molho de Tomate, Mussarela, Manjericão, Azeite;`,
+        titulos: {
+            1: "Frango_com_Catupiry.zip",
+            2: "Frango_com_Catupiry.rar",
+            3: "Frango_com_Catupiry.iso"
+        },
+        descricoes: {
+            1: "",
+            2: "",
+            3: {
+                1: "Dependencies: > * Núcleo: Massa de Pizza e Molho de Tomate",
+                2: "",
+                3: "",
+                4: ""
+            }
+        }
+    }
 ]
 
 const swiperWrapper = document.getElementById('swiper-wrapper')
@@ -96,11 +165,20 @@ function abrirModal(id) {
             break;
 
         default:
-            break;
+            return;
     }
 }
 
 function gerarModal(id) {
+    const pizza = pizzas.find(e => e.id === id);
+    const error = 'Pizza não encontrada no servidor'
+
+    if (!pizza) {
+        console.error(error)
+        alert(error)
+        return
+    }
+
     modal.innerHTML = `
         <div class="conteiner-window">
 
@@ -109,44 +187,45 @@ function gerarModal(id) {
                 <div class="imgX-div">
 
                     <div class="close-div">
-                        <button class="btn-close">${X}</button>
+                        <button onclick="fecharModal()" class="btn-close">${X}</button>
                     </div>
                     
                     <div class="img-div">
-                        <img src="${pizzas[id].imagem}"/>
-                        <p class="value">${pizzas[id].value}</p>
+                        <img src="${pizza.imagem}"/>
+                        <p><span>R$</span>${pizza.preco.toFixed(2)}</p>
                     </div>
 
                 </div>
 
                 <div class="content-div">
 
-                    <div id="content">
-                        <h3>${pizzas[id].titulos[1]}</h3>
-                        <p>${pizzas[id].descricoes[1]}</p>
-                    </div>
+                    <article>
+                        <h3>${pizza.titulos[1]}</h3>
+                        <p>${pizza.descricoes[1]}</p>
+                    </article>
 
-                    <div id="content">
-                        <h3>${pizzas[id].titulos[2]}</h3>
-                        <p>${pizzas[id].descricoes[2]}</p>
-                    </div>
+                    <article>
+                        <h3>${pizza.titulos[2]}</h3>
+                        <p>${pizza.descricoes[2]}</p>
+                    </article>
 
-                    <div id="content">
-                        <h3>${pizzas[id].titulos[3]}</h3>
-                        <p>${pizzas[id].descricoes[3][1]}</p>
-                        <p>${pizzas[id].descricoes[3][2]}</p>
-                        <p>${pizzas[id].descricoes[3][3]}</p>
-                        <p>${pizzas[id].descricoes[3][4]}</p>
-                    </div>
+                    <article>
+                        <h3>${pizza.titulos[3]}</h3>
+                        <p>${pizza.descricoes[3][1]}</p>
+                        <p>${pizza.descricoes[3][2]}</p>
+                        <p>${pizza.descricoes[3][3]}</p>
+                        <p>${pizza.descricoes[3][4]}</p>
+                    </article>
                 </div>
 
             </div>
 
         </div>
     `;
-}   
+}
 
 function fecharModal() {
     modal.innerHTML = '';
     body.classList.remove('occult')
+    location.reload();
 }
