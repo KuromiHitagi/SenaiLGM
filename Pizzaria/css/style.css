@@ -209,7 +209,7 @@ main {
             border-radius: 100px;
             box-shadow: 0px 0px 10px 1px #ffbd59;
 
-            transform: rotate(-5deg);
+            transform: rotate(-2deg);
             transition: all ease-in-out 0.6s;
 
             &:hover {
@@ -267,7 +267,7 @@ main {
             border-radius: 100px;
             box-shadow: 0px 0px 10px 1px #25c5aa;
 
-            transform: rotate(5deg);
+            transform: rotate(2deg);
             transition: all ease-in-out 0.6s;
 
             &:hover {
