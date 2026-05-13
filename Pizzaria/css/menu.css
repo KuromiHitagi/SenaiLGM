@@ -157,7 +157,7 @@ header {
 }
 
 .spacement {
-    height: 261px;
+    height: 141px;
     background-color: #272424;
 }
 
@@ -167,9 +167,58 @@ main {
     height: 100%;
 }
 
+.cards-tipos{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 100%;
+    height: 650px;
+
+    border-bottom: 2px dashed #ffbd59;
+
+    a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .card{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        width: max-content;
+        height: 200px;
+
+        border: none;
+        border-radius: 51px;
+        background-color: #401d15;
+
+        .img-div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+        }
+
+        .combo-div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 350px;
+        }
+
+        .content-div{
+            margin-top: 10px;
+            text-align: center;
+        }
+    }
+}
+
 .swiper {
     width: 100%;
-    height: 500px;
+    height: 700px;
     margin-top: 50px;
 
     .swiper-button-next,
