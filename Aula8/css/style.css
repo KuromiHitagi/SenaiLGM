@@ -291,9 +291,7 @@ main {
                     }
 
                     button {
-                        opacity: 0;
-                        visibility: hidden;
-                        width: 0;
+                        width: 45%;
 
                         border: none;
                         border-radius: 10px;
@@ -303,19 +301,6 @@ main {
                             cursor: pointer;
                             transform: scale(1.05);
                             background-color: #d6d6d6;
-                        }
-                    }
-                }
-            }
-
-            &:hover {
-                .cardCont {
-                    .action {
-                        button {
-                            visibility: visible;
-                            opacity: 1;
-                            width: 45%;
-                            padding-right: 5px;
                         }
                     }
                 }
@@ -339,5 +324,119 @@ main {
         &:hover {
             background-color: rgb(226, 110, 33);
         }
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 0;
+    }
+
+    header {
+        min-height: 14%;
+    }
+
+    header .container {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    header .container .logo-area {
+        text-align: center;
+        padding: 4px 8px;
+    }
+
+    header .container .nav-menu ul {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    header .container .nav-menu ul li {
+        padding: 3px 6px;
+    }
+
+    .spacement {
+        height: 14%;
+    }
+
+    main {
+        min-height: 86%;
+    }
+
+    main .sectionTitle {
+        height: 160px;
+        padding: 0 10px;
+    }
+
+    main .sectionTitle a {
+        padding: 14px 22px;
+        border-radius: 16px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    main .sectionSobre {
+        height: auto;
+        padding: 0 10px;
+        margin-top: 8%;
+        margin-bottom: 8%;
+    }
+
+    main .sectionSobre .textSobre {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    main .sectionSobre .textSobre .texts {
+        width: 100%;
+        padding: 12px 16px;
+    }
+
+    main .sectionSobre .textSobre .reason {
+        width: 100%;
+        padding: 16px 16px;
+        border-left-width: 5px;
+    }
+
+    main .sectionProdutos {
+        padding: 25px 0;
+    }
+
+    main .sectionProdutos .carrosselWrapper {
+        height: 330px;
+        padding: 20px 0 0 0;
+    }
+
+    main .sectionProdutos .carrossel {
+        gap: 18px;
+    }
+
+    main .sectionProdutos .card {
+        min-width: 210px;
+        padding: 14px;
+    }
+
+    main .sectionProdutos .card .cardImg img {
+        width: 170px;
+        height: 150px;
+    }
+
+    main .sectionProdutos .card .cardCont .action {
+        width: 100%;
+        gap: 12px;
+    }
+
+    main .sectionProdutos .card .cardCont .action button {
+        width: 48%;
+        font-size: 14px;
+    }
+
+    .prev,
+    .next {
+        padding: 10px;
+        font-size: 16px;
+        width: 44px;
+        height: 44px;
     }
 }

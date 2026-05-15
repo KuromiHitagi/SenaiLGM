@@ -46,3 +46,9 @@ function showCarrinho() {
     `;
 }
 showCarrinho();
+
+function comprar() {
+    for(let i in carrinho) {
+        carrinho.pop();
+    }
+}
