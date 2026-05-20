@@ -44,6 +44,10 @@ body {
     background-color: #272424;
 }
 
+.grow:hover {
+    transform: scale(1.1);
+}
+
 header {
     position: fixed;
     top: 0;
@@ -163,26 +167,33 @@ header {
 
 main {
     flex: 1;
-
+    width: 100%;
     height: 100%;
 }
 
-.cards-tipos{
+section {
+    width: 100%;
+    height: 800px;
+
     display: flex;
     align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #353131;
+}
+
+.cards-tipos {
     justify-content: space-evenly;
 
-    width: 100%;
-    height: 650px;
+    * {
+        transition: all ease 0.3s;
+    }
 
-    border-bottom: 2px dashed #ffbd59;
-
-    a{
+    a {
         color: white;
         text-decoration: none;
     }
 
-    .card{
+    .card {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -195,21 +206,26 @@ main {
         border-radius: 51px;
         background-color: #401d15;
 
-        .img-div{
+        .img-div {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 200px;
         }
 
-        .combo-div{
+        .combo-div {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 350px;
+            width: 300px;
+
+            #soda {
+                z-index: 0;
+                margin-right: -16%;
+            }
         }
 
-        .content-div{
+        .content-div {
             margin-top: 10px;
             text-align: center;
         }
@@ -246,11 +262,7 @@ main {
             transition: all ease 0.3s;
         }
 
-        .grow:hover {
-            transform: scale(1.1);
-        }
-
-        .card-pizza {
+        .card {
             background: #2b2727;
             border: 1px solid #ffbd595b;
             border-radius: 20px;
@@ -273,9 +285,14 @@ main {
             }
 
             img {
-                width: 200px;
+                width: 250px;
                 border-radius: 15px;
                 margin-bottom: 10px;
+
+                &.soda-img {
+                    width: 200px;
+                    height: 200px;
+                }
             }
 
             h3 {
@@ -291,7 +308,16 @@ main {
                 width: 100%;
             }
 
-            .btn-detalhes {
+            .btns {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+            }
+
+            .btn {
                 background: #272020;
                 color: #a5a5a5;
                 border: none;
@@ -409,6 +435,12 @@ main {
                         border-radius: 100px;
                         transition: all ease 0.6s;
                         margin-bottom: 25px;
+
+                        &.img-soda {
+                            width: 300px;
+                            height: 330px;
+                            border-radius: 50px;
+                        }
 
                         &:hover {
                             transform: rotate(-2deg) scale(1.05);

@@ -1,17 +1,30 @@
 class Pizza {
+
     constructor(id, nome, preco, imagem, ingredientes, titulos, descricoes) {
+
         this.id = id;
+
         this.nome = nome;
+
         this.preco = preco;
+
         this.imagem = imagem;
+
         this.ingredientes = ingredientes;
+
         this.titulos = titulos;
+
         this.descricoes = descricoes;
+
     }
+
 }
+
+
 
 let listaPizzas = [
     /*
+
         new Pizza(,
             "",
             ,
@@ -33,7 +46,10 @@ let listaPizzas = [
                 }
             }
         )
+
     */
+
+
 
     new Pizza(1,
         "Margherita",
@@ -46,7 +62,7 @@ let listaPizzas = [
             3: "Margherita v1.0"
         },
         {
-            1: "A base de todo grande sistema. Molho de tomate artesanal, muçarela de alta qualidade e manjericão fresco. Simples, funcional e sem erros de execução.",
+            1: "A base de todo grande sistema. Molho de tomate artesanal, mussarela de alta qualidade e manjericão fresco. Simples, funcional e sem erros de execução.",
             2: "O Hello World das pizzas. Criada com uma arquitetura leve de massa italiana, camadas de queijo derretido e finalizada com folhas de manjericão orgânico. O clássico que nunca sai de moda (e nunca quebra o build).",
             3: {
                 1: "Dependencies > *Massa de Pizza e Molho de Tomate.",
@@ -56,6 +72,8 @@ let listaPizzas = [
             }
         }
     ),
+
+
 
     new Pizza(2,
         "Calabresa",
@@ -79,6 +97,8 @@ let listaPizzas = [
         }
     ),
 
+
+
     new Pizza(3,
         "Mussarela",
         50.0,
@@ -100,6 +120,8 @@ let listaPizzas = [
             }
         }
     ),
+
+
 
     new Pizza(4,
         "Frango com Catupiry",
@@ -124,75 +146,82 @@ let listaPizzas = [
     )
 ]
 
-const swiperWrapper = document.getElementById('swiper-wrapper')
-function gerarCard() {
-    swiperWrapper.innerHTML = '';
+const swiperWrapperPizza = document.getElementById('swiper-pizza');
+function gerarCardPizza() {
+    if (!swiperWrapperPizza) return;
+    swiperWrapperPizza.innerHTML = '';
+
+    const carrinho_icon = `
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg>
+    `;
 
     for (let i in listaPizzas) {
-        swiperWrapper.innerHTML += `
+        swiperWrapperPizza.innerHTML += `
             <div class="swiper-slide">
-                <div class="card-pizza">
-                    <div class="pizza-img-wrapper grow">
+                <div class="card">
+                    <div class="grow">
                         <img src="${listaPizzas[i].imagem}" alt="${listaPizzas[i].nome}">
                     </div>
                     <h3 class="grow">${listaPizzas[i].nome}</h3>
                     <p class="desc-log grow">Log: Sabor estável detectado...</p>
-                    <button class="btn-detalhes" onclick="gerarModal(${listaPizzas[i].id})">Ver Detalhes</button>
+
+                    <div class="btns">
+                        <button class="btn" onclick="gerarModalPizza(${listaPizzas[i].id})">Detalhes</button>
+                        <button class="btn" onclick="adicionarCarrinho(${listaPizzas[i].id})">${carrinho_icon} Adicionar</button>
+                    </div>
                 </div>
             </div>
-        `
+        `;
     }
 }
-gerarCard();
+gerarCardPizza();
+
+
 
 const X = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
                 <line x1="18" y1="6" x2="6" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
                 <line x1="6" y1="6" x2="18" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
            </svg>`;
-const modal = document.getElementById('modal')
-function gerarModal(id) {
-    void modal.offsetWidth;
-    modal.classList.add('modal-enter')
+
+function gerarModalPizza(id) {
+    const modalElement = document.getElementById('modal');
+    void modalElement.offsetWidth;
+    modalElement.classList.add('modal-enter');
 
     const pizza = listaPizzas.find(e => e.id === id);
-    const error = 'Pizza não encontrada no servidor'
+    const error = 'Pizza não encontrada no servidor';
 
     if (!pizza) {
-        console.error(error)
-        alert(error)
-        return
+        console.error(error);
+        alert(error);
+        return;
     }
 
-    modal.innerHTML = `
+    modalElement.innerHTML = `
         <div class="conteiner-window">
-
             <div class="conteiner-max">
-
                 <div class="imgX-div">
-
                     <div class="close-div">
                         <button onclick="fecharModal()" class="btn-close">${X}</button>
                     </div>
-                    
                     <div class="img-div">
                         <img src="${pizza.imagem}"/>
                         <p><span>R$</span>${pizza.preco.toFixed(2)}</p>
                     </div>
-
                 </div>
-
                 <div class="content-div">
-
                     <article>
                         <h3>${pizza.titulos[1]}</h3>
                         <p>${pizza.descricoes[1]}</p>
                     </article>
-
                     <article>
                         <h3>${pizza.titulos[2]}</h3>
                         <p>${pizza.descricoes[2]}</p>
                     </article>
-
                     <article>
                         <h3>${pizza.titulos[3]}</h3>
                         <ul>
@@ -203,21 +232,21 @@ function gerarModal(id) {
                         </ul>
                     </article>
                 </div>
-
             </div>
-
         </div>
     `;
 }
 
-function fecharModal() {
-    modal.classList.remove('modal-enter');
-    void modal.offsetWidth;
 
-    modal.classList.add('exit');
+
+function fecharModal() {
+    const modalElement = document.getElementById('modal');
+    modalElement.classList.remove('modal-enter');
+    void modalElement.offsetWidth;
+    modalElement.classList.add('exit');
 
     setTimeout(() => {
-        modal.innerHTML = '';
-        modal.classList.remove('exit');
+        modalElement.innerHTML = '';
+        modalElement.classList.remove('exit');
     }, 400);
 }

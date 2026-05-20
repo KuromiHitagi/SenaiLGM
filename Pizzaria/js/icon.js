@@ -6,7 +6,7 @@ function imagePizza() {
                         <div class="tooltip">
                             <p>Bem-Vindo(a) à Pizzaria Forno&Código</p>
                         </div>
-                        <img class="imgPizza" src="./images/pizza-icon.png" alt="Pizza-icon"/>
+                        <img class="imgPizza" src="../images/pizza-icon.png" alt="Pizza-icon"/>
                         `;
 }
 
