@@ -36,6 +36,7 @@ let listaSoda = [
 const swiperWrapperSoda = document.getElementById('swiper-soda');
 function gerarCardSoda() {
     if (!swiperWrapperSoda) return;
+
     swiperWrapperSoda.innerHTML = '';
 
     const carrinho_icon = `

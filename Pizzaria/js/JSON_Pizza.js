@@ -171,7 +171,7 @@ function gerarCardPizza() {
 
                     <div class="btns">
                         <button class="btn" onclick="gerarModalPizza(${listaPizzas[i].id})">Detalhes</button>
-                        <button class="btn" onclick="adicionarCarrinho(${listaPizzas[i].id})">${carrinho_icon} Adicionar</button>
+                        <button class="btn" onclick="adicionarCarrinho('${listaPizzas[i].nome}', ${listaPizzas[i].preco})">${carrinho_icon} Adicionar</button>
                     </div>
                 </div>
             </div>
@@ -189,17 +189,20 @@ const X = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="ht
 
 function gerarModalPizza(id) {
     const modalElement = document.getElementById('modal');
+    if(!modalElement) return;
     void modalElement.offsetWidth;
     modalElement.classList.add('modal-enter');
 
+    // id pode vir como string via onclick
     const pizza = listaPizzas.find(e => e.id === id);
     const error = 'Pizza não encontrada no servidor';
 
     if (!pizza) {
-        console.error(error);
+        console.error(error, { id, listaPizzasIds: listaPizzas.map(p=>p.id) });
         alert(error);
         return;
     }
+
 
     modalElement.innerHTML = `
         <div class="conteiner-window">
