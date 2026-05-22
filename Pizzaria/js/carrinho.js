@@ -28,6 +28,7 @@ const tabela = document.getElementById('cont')
 const valor = document.getElementById('valor-total')
 function showCarrinho() {
     if(!tabela || !valor) return;
+
     tabela.innerHTML = '';
     let valorTotal = 0;
 
@@ -44,11 +45,10 @@ function showCarrinho() {
         valorTotal += carrinho[i].preco;
     }
     
-
     valor.innerHTML = `
         <tr>
-            <td style="text-align: right;"> <strong style="border: none;">Total:</strong></td>
-            <td colspan="2" style="color: #3f3f3f !important; text-shadow: none !important;">R$${valorTotal.toFixed(2)}</td>
+            <td style="width: 50%; text-align: right;"> <strong style="border: none;">Total:</strong></td>
+            <td colspan="2" style="color: #ebebeb !important; text-shadow: none !important;">R$${valorTotal.toFixed(2)}</td>
         </tr>
     `;
 }
@@ -58,7 +58,4 @@ function comprar() {
     for(let i in carrinho) {
         carrinho.pop();
     }
-    localStorage.setItem("MeuItem", JSON.stringify(carrinho))
-    try { showCarrinho(); } catch (e) {}
 }
-

@@ -171,7 +171,7 @@ function gerarCardPizza() {
 
                     <div class="btns">
                         <button class="btn" onclick="gerarModalPizza(${listaPizzas[i].id})">Detalhes</button>
-                        <button class="btn" onclick="adicionarCarrinho('${listaPizzas[i].nome}', ${listaPizzas[i].preco})">${carrinho_icon} Adicionar</button>
+                        <button class="btn" onclick="adicionarCarrinho('Pizza ${listaPizzas[i].nome}', ${listaPizzas[i].preco})">${carrinho_icon} Adicionar</button>
                     </div>
                 </div>
             </div>
