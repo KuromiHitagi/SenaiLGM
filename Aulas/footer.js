@@ -44,7 +44,8 @@ function Modo() {
         footer.classList.add("black")
     }
 
-    contador = (contador === 0) ? 1 : 0;
+    contador = (contador === 0) ? 1 : 0; // Define o valor da variável contador
     
-    verify();
+    verify(); //Chama a função verify(), para atualizar o texto
 }
+Modo();
