@@ -56,7 +56,7 @@ function gerarCardSoda() {
                     </div>
                     <h3 class="grow">${listaSoda[i].nome}</h3>
                     <p class="desc-log grow">Log: Sabor estável detectado...</p>
-                    <button class="btn" onclick="adicionarCarrinho(${listaSoda[i].id})">${carrinho_icon} Adicionar</button>
+                    <button class="btn" onclick="adicionarCarrinho('${listaSoda[i].nome}', ${listaSoda[i].preco})">${carrinho_icon} Adicionar</button>
                 </div>
             </div>
         `;
