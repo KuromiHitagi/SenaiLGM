@@ -24,7 +24,6 @@ function gerarHeader() {
                     <ul>
                         <li id="btn-carrinho"><a href="./carrinho.html">${carrinho_icon} Carrinho</a></li>
                         <li><a href="../index.html">Home</a></li>
-                        <li><a href="#start">Topo</a></li>
                     </ul>
                     <div class="acoes-login">
                         <a href="./login.html">Login</a>
