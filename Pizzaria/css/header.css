@@ -115,6 +115,7 @@ header {
 
                 a {
                     display: inline-block;
+                    text-align: center;
                     color: white;
                     text-decoration: none;
 
@@ -138,13 +139,3 @@ header {
     height: 141px;
     background-color: #272424;
 }
-
-/*  
-.show{
-    display: inline-block;
-}
-
-.disapear{
-    display: none;
-}
-*/

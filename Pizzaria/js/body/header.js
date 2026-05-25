@@ -1,7 +1,9 @@
 const header = document.querySelector('header')
 
 function gerarHeader() {
-    const isLog = sessionStorage.getItem("isLog")
+    let isLog = sessionStorage.getItem("isLog") === "true"
+    const defaultImg = "../../src/Images/user-icon.png"
+    const logadoImg = "../images/imagem_Logado.jpg"
 
     const carrinho_icon = `
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;">
@@ -11,9 +13,10 @@ function gerarHeader() {
         </svg>
     `;
 
-    header.innerHTML = '';
-
-    header.innerHTML =
+    if(isLog == true) {
+        header.innerHTML = '';
+        
+        header.innerHTML =
         `
             <nav>
                 <div class="logotipo">
@@ -22,25 +25,41 @@ function gerarHeader() {
 
                 <div class="acoes">
                     <ul>
-                        <li id="btn-carrinho"><a href="./carrinho.html">${carrinho_icon} Carrinho</a></li>
+                        <li><a href="./carrinho.html">${carrinho_icon}Carrinho</a></li>
                         <li><a href="../index.html">Home</a></li>
                     </ul>
                     <div class="acoes-login">
-                        <a href="./login.html">Login</a>
                         <a href="./login.html">
-                            <img src="../../src/Images/user-icon.png" width="149" alt="user-icon" />
+                            <img src="${logadoImg}" width="130" style="border-radius: 50%; margin-top: 10px;" alt="user-icon" />
                         </a>
                     </div>
                 </div>
             </nav>
         `;
-
-    const btn_carrinho = document.getElementById("btn-carrinho")
-    if (isLog) {
-        btn_carrinho.classList.add("show")
     }
-    else{
-        btn_carrinho.classList.add("disapear")
+    else {
+        header.innerHTML = '';
+
+        header.innerHTML =
+        `
+            <nav>
+                <div class="logotipo">
+                    <p>Forno&Código</p>
+                </div>
+
+                <div class="acoes">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                    </ul>
+                    <div class="acoes-login">
+                        <a href="./login.html">Login</a>
+                        <a href="./login.html">
+                            <img src="${defaultImg}" width="149" alt="user-icon" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        `;
     }
 }
 gerarHeader();
