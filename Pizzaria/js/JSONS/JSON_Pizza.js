@@ -1,21 +1,12 @@
 class Pizza {
-
     constructor(id, nome, preco, imagem, ingredientes, titulos, descricoes) {
-
         this.id = id;
-
         this.nome = nome;
-
         this.preco = preco;
-
         this.imagem = imagem;
-
         this.ingredientes = ingredientes;
-
         this.titulos = titulos;
-
         this.descricoes = descricoes;
-
     }
 
 }

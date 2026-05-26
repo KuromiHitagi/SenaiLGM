@@ -18,7 +18,7 @@
 
 <body>
     <header>
-       
+       <!-- Aqui será renderizado o 'header.js' -->
     </header>
 
     <div class="spacement">
@@ -71,18 +71,29 @@
         <section class="swiper-Pizzas">
             <div class="swiper swiper-pizza-container">
                 <div class="swiper-wrapper" id="swiper-pizza">
-                    <!-- Aqui serão renderizadas as pizzas do arquivo 'JSON_Pizza', por um carrossel feito pela biblioteca swiper -->
+                    <!-- Aqui serão renderizadas as pizzas do arquivo 'JSON_Pizza.js', por um carrossel feito pela biblioteca swiper -->
                 </div>
 
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
         </section>
+
+        <!-- <section class="swiper-Combo">
+            <div class="swiper swiper-combo-container">
+                <div class="swiper-wrapper" id="swiper-combo">
+                    <!- Aqui serão renderizados os Refrigenrantes do arquivo 'JSON_Combo.js', por um carrossel feito pela biblioteca swiper ->
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section> -->
         
         <section class="swiper-Soda">
             <div class="swiper swiper-soda-container">
                 <div class="swiper-wrapper" id="swiper-soda">
-                    <!-- Aqui serão renderizados os Refrigenrantes do arquivo 'JSON_Soda', por um carrossel feito pela biblioteca swiper -->
+                    <!-- Aqui serão renderizados os Refrigenrantes do arquivo 'JSON_Soda.js', por um carrossel feito pela biblioteca swiper -->
                 </div>
 
                 <div class="swiper-button-prev"></div>
@@ -97,11 +108,12 @@
     </div>
 
 </body>
-<script src="../js/JSON_Pizza.js"></script>
-<script src="../js/JSON_Soda.js"></script>
+<script src="../js/JSONS/JSON_Pizza.js"></script>
+<script src="../js/JSONS/JSON_Soda.js"></script>
 <script src="../js/body/header.js"></script>
 <script src="../js/carrinho.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- <script src="../js/JSONS/JSON_Combo.js"></script> -->
 <script>
     const swiperPizza = new Swiper('.swiper-pizza-container', {
         slidesPerView: 3,
@@ -117,6 +129,21 @@
             1024: { slidesPerView: 3 }
         }
     });
+    
+    // const swiperCombo = new Swiper('.swiper-combo-container', {
+    //     slidesPerView: 3,
+    //     spaceBetween: 30,
+    //     loop: true,
+    //     navigation: {
+    //         nextEl: '.swiper-pizza-container .swiper-button-next',
+    //         prevEl: '.swiper-pizza-container .swiper-button-prev',
+    //     },
+    //     breakpoints: {
+    //         320: { slidesPerView: 1 },
+    //         768: { slidesPerView: 2 },
+    //         1024: { slidesPerView: 3 }
+    //     }
+    // });
     
     const swiperSoda = new Swiper('.swiper-soda-container', {
         slidesPerView: 3,
