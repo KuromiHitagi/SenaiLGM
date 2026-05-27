@@ -114,7 +114,10 @@ header {
                 height: 100%;
 
                 a {
-                    display: inline-block;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
                     text-align: center;
                     color: white;
                     text-decoration: none;
@@ -136,6 +139,6 @@ header {
 }
 
 .spacement {
-    height: 141px;
+    min-height: 141px;
     background-color: #272424;
 }

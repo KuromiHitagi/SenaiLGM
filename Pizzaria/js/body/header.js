@@ -1,9 +1,25 @@
 const header = document.querySelector('header')
+const headerIndex = document.getElementById('header') || null
 
 function gerarHeader() {
     let isLog = sessionStorage.getItem("isLog") === "true"
-    const defaultImg = "../../src/Images/user-icon.png"
-    const logadoImg = "../images/imagem_Logado.jpg"
+    let defaultImg = "../../src/Images/user-icon.png"
+    let btnEstiloCarrinho = "opacity: 0.7;"
+    let btnLogin = "<p>Login</p>"
+    let alert = `onclick="alert('Você deve estar logado para acessar o carrinho!')"`
+    let rotaCarrinho = "#"
+    let rotaCardapio = "#"
+    let rotaHome = "../index.html"
+    let rotaLogin = "./login.html"
+
+    if (isLog) {
+        defaultImg = "../images/imagem_Logado.jpg"
+        btnEstiloCarrinho = "opacity: 1;"
+        btnLogin = ""
+        alert = null
+        rotaCarrinho = "./carrinho.html"
+        rotaCardapio = "./menu.html"
+    }
 
     const carrinho_icon = `
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;">
@@ -13,10 +29,21 @@ function gerarHeader() {
         </svg>
     `;
 
-    if(isLog == true) {
-        header.innerHTML = '';
-        
-        header.innerHTML =
+    header.innerHTML = '';
+
+    if (headerIndex != null) {
+        defaultImg = "../src/Images/user-icon.png"
+        rotaHome = "#start"
+        rotaCardapio = "./html/menu.html"
+        rotaLogin = "./html/login.html"
+
+        if (isLog) {
+            defaultImg = "./images/imagem_Logado.jpg"
+            rotaCarrinho = "./html/carrinho.html"
+        }
+    }
+
+    header.innerHTML =
         `
             <nav>
                 <div class="logotipo">
@@ -25,41 +52,19 @@ function gerarHeader() {
 
                 <div class="acoes">
                     <ul>
-                        <li><a href="./carrinho.html">${carrinho_icon}Carrinho</a></li>
-                        <li><a href="../index.html">Home</a></li>
+                        <li><a style="${btnEstiloCarrinho}" ${alert} href="${rotaCarrinho}">${carrinho_icon}Carrinho</a></li>
+                        <li><a href="${rotaCardapio}">Cardápio</a></li>
+                        <li><a href="${rotaHome}">Home</a></li>
                     </ul>
                     <div class="acoes-login">
-                        <a href="./login.html">
-                            <img src="${logadoImg}" width="130" style="border-radius: 50%; margin-top: 10px;" alt="user-icon" />
+                        <a href="${rotaLogin}">
+                            ${btnLogin}
+                            <img src="${defaultImg}" width="130" style="border-radius: 50%; margin-top: 10px;" alt="user-icon" />
                         </a>
                     </div>
                 </div>
             </nav>
         `;
-    }
-    else {
-        header.innerHTML = '';
 
-        header.innerHTML =
-        `
-            <nav>
-                <div class="logotipo">
-                    <p>Forno&Código</p>
-                </div>
-
-                <div class="acoes">
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                    </ul>
-                    <div class="acoes-login">
-                        <a href="./login.html">Login</a>
-                        <a href="./login.html">
-                            <img src="${defaultImg}" width="149" alt="user-icon" />
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        `;
-    }
 }
 gerarHeader();

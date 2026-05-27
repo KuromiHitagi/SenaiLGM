@@ -19,24 +19,7 @@
 
 <body>
     <header>
-        <nav>
-            <div class="logotipo">
-                <p>Forno&Código</p>
-            </div>
-
-            <div class="acoes">
-                <ul>
-                    <li id="btn-carrinho"><a href="./menu.html">Cardápio</a></li>
-                    <li><a href="../index.html">Home</a></li>
-                </ul>
-                <div class="acoes-login">
-                    <a href="./login.html">Login</a>
-                    <a href="./login.html">
-                        <img src="../../src/Images/user-icon.png" width="149" alt="user-icon" />
-                    </a>
-                </div>
-            </div>
-        </nav>
+        
     </header>
 
     <div class="spacement">
@@ -65,11 +48,20 @@
                 </tfoot>
 
             </table>
+
+        </section>
+
+        <section class="actionButtons">
+            <div class="btns">
+                <button class="btn-cancel" onclick="decision(1)">Cancelar</button>
+                <button class="btn-comprar" onclick="decision(2)">Comprar</button>
+            </div>
         </section>
 
     </main>
 
 </body>
 <script src="../js/carrinho.js"></script>
+<script src="../js/body/header.js"></script>
 
 </html>

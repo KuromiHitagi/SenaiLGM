@@ -7,5 +7,11 @@ function logar(nome, senha) {
     else {
         sessionStorage.setItem("isLog", false)
         alert("Login mal sucedido!")
+        window.location.reload();
     }
+}
+
+function deslogar() {
+    sessionStorage.setItem("isLog", false)
+    window.location.reload();
 }

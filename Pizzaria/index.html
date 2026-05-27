@@ -14,25 +14,9 @@
 </head>
 
 <body>
-    <header> 
-        <!-- Esta é a única página HTML que não tem o header automático, por conta dos links de páginas -->
-        <nav>
-            <div class="logotipo">
-                <p>Forno&Código</p>
-            </div>
+    <header id="header">
+        <!-- Esta é a única página HTML que não tem o header do 'header.js', por conta dos links de páginas -->
 
-            <div class="acoes">
-                <ul>
-                    <li><a href="./html/menu.html">Cardápio</a></li>
-                </ul>
-                <div class="acoes-login">
-                    <a href="./html/login.html">Login</a>
-                    <a href="./html/login.html">
-                        <img src="../src/Images/user-icon.png" width="149" alt="user-icon" />
-                    </a>
-                </div>
-            </div>
-        </nav>
     </header>
 
     <div class="spacement">
@@ -41,10 +25,7 @@
 
     <main>
         <section class="start">
-            <a href="#">
-                <img src="https://superpizzapan.com.br/wp-content/uploads/2025/10/a-vida-e-massa.jpg"
-                    alt="pizza-comum" />
-            </a>
+            <img src="https://superpizzapan.com.br/wp-content/uploads/2025/10/a-vida-e-massa.jpg" alt="pizza-comum" />
 
             <div class="btn">
                 <button onclick="window.location.href='./html/menu.html'">Executar pedido</button>
@@ -101,7 +82,8 @@
         <div class="social-media grow">
             <div class="whatsapp grow">
                 <a href="#footer" onclick="avisar(0)">
-                    <img id="socialImg" src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="whatsapp-icon">
+                    <img id="socialImg" src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png"
+                        alt="whatsapp-icon">
                 </a>
 
                 <p>(11) 4002-8922</p>
@@ -117,7 +99,8 @@
 
             <div class="instagram grow">
                 <a href="#footer" onclick="avisar(1)">
-                    <img id="socialImg" src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="instagram-icon">
+                    <img id="socialImg" src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png"
+                        alt="instagram-icon">
                 </a>
 
                 <p>@forno&codigo</p>
@@ -126,7 +109,9 @@
 
         <div class="address">
             <div class="content grow">
-                <a href="#footer" onclick="avisar(2)"><p>endereço/ rua: 8gb ram - número: 128</p></a>
+                <a href="#footer" onclick="avisar(2)">
+                    <p>endereço/ rua: 8gb ram - número: 128</p>
+                </a>
             </div>
 
             <div class="copyright grow">
@@ -136,7 +121,9 @@
         </div>
 
         <div class="time grow">
-            <a href="#footer" onclick="avisar(3)"><p>uptime: 18:00 - 23:59</p></a>
+            <a href="#footer" onclick="avisar(3)">
+                <p>uptime: 18:00 - 23:59</p>
+            </a>
         </div>
     </footer>
 </body>
@@ -165,5 +152,6 @@
         }
     }
 </script>
+<script src="./js/body/header.js"></script>
 
 </html>

@@ -3,7 +3,7 @@ let carrinho = JSON.parse(localStorage.getItem("MeuItem")) || [];
 function adicionarCarrinho(nome, preco) {
     const isLog = sessionStorage.getItem("isLog");
 
-    if(!isLog) {
+    if (!isLog) {
         alert("Você precisa estar logado para comprar algo!")
         return
     }
@@ -27,12 +27,12 @@ function delCarrinho(id) {
 const tabela = document.getElementById('cont')
 const valor = document.getElementById('valor-total')
 function showCarrinho() {
-    if(!tabela || !valor) return;
+    if (!tabela || !valor) return;
 
     tabela.innerHTML = '';
     let valorTotal = 0;
 
-    for(let i = 0; i < carrinho.length; i++) {
+    for (let i = 0; i < carrinho.length; i++) {
         tabela.innerHTML += `
             <tr>
                 <td style="text-align: left;">${carrinho[i].nome}</td>
@@ -44,7 +44,7 @@ function showCarrinho() {
         `
         valorTotal += carrinho[i].preco;
     }
-    
+
     valor.innerHTML = `
         <tr>
             <td style="width: 50%; text-align: right;"> <strong style="border: none;">Total:</strong></td>
@@ -54,8 +54,21 @@ function showCarrinho() {
 }
 showCarrinho();
 
-function comprar() {
-    for(let i in carrinho) {
-        carrinho.pop();
+function decision(num) {
+    if (num == 1) {
+        carrinho.length = 0
+
+        showCarrinho();
+    }
+    else if (num == 2) {
+        if (carrinho && carrinho.length > 0) {
+            carrinho.length = 0
+
+            alert("Compra realizada com sucesso!")
+            showCarrinho();
+        }
+        else {
+            alert("Você precisa ter algo no carrinho para comprar!")
+        }
     }
 }
