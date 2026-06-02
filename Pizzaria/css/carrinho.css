@@ -10,21 +10,16 @@
     --teal: #25c5aa;
 }
 
-body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: 'Fira Code', monospace;
-    margin: 0;
-}
-
 main {
+    flex: 1;
+
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 
-    padding: 40px 16px;
-    min-height: 60vh;
+    width: 100%;
+    min-height: 800px;
 }
 
 .sectionCarrinho {

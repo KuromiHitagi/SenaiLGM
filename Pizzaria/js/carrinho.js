@@ -32,6 +32,14 @@ function showCarrinho() {
     tabela.innerHTML = '';
     let valorTotal = 0;
 
+    if(carrinho == 0) {
+        tabela.innerHTML += `
+            <tr>
+                <td colspan="3" style="text-align: center; opacity: 0.7;">Você ainda não tem nada no carrinho</td>
+            </tr>
+        `
+    }
+
     for (let i = 0; i < carrinho.length; i++) {
         tabela.innerHTML += `
             <tr>
