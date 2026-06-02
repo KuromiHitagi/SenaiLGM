@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -108,13 +109,20 @@
         <!-- Esta div serve apenas para expandir os detalhes das pizzas do arquivo 'JSON' -->
     </div>
 
+    <footer id="footer">
+        <!-- Aqui será renderizado o 'Footer.js' -->
+    </footer>
+
 </body>
 <script src="../js/JSONS/JSON_Pizza.js"></script>
 <script src="../js/JSONS/JSON_Soda.js"></script>
+<!-- <script src="../js/JSONS/JSON_Combo.js"></script> -->
+
 <script src="../js/body/header.js"></script>
+
 <script src="../js/carrinho.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!-- <script src="../js/JSONS/JSON_Combo.js"></script> -->
+
 <script>
     const swiperPizza = new Swiper('.swiper-pizza-container', {
         slidesPerView: 3,
@@ -161,5 +169,6 @@
         }
     });
 </script>
+<script src="../js/body/footer.js"></script>
 
 </html>
