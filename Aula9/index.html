@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../Aulas/css/footerStyle.css">
+
+    <title>Aula 9</title>
+</head>
+
+<body>
+    <main>
+
+        <section>
+
+            <form onsubmit="cadastrar(event)">
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" required>
+
+                <label for="idade">Idade</label>
+                <input id="idade" type="number" required>
+
+                <label for="curso">Curso</label>
+                <input type="text" id="curso" required>
+
+                <label for="nota">Nota</label>
+                <input type="number" min="0" max="10" id="nota" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+
+            <button onclick="exibir(event)">Show</button>
+            <button onclick="fechar(event)">Unshow</button>
+
+            <table id="table1">
+                
+            </table>
+
+        </section>
+    
+    </main>
+
+    <footer>
+        <!-- Aqui será renderizado o 'footer.js' -->
+    </footer>
+</body>
+<script src="./script.js"></script>
+<script src="../Aulas/footer.js"></script>
+<script>
+    alert("Essa aula, é a introdução ao JS, porém devido ao meu conhecimento prévio, a aula 4, a qual contém o mesmo tema, tem um melhor código e estilização")
+</script>
+
+</html>
