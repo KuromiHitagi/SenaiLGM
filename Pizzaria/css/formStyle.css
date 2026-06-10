@@ -6,7 +6,7 @@ main {
     flex-direction: row;
 
     width: 100%;
-    min-height: 650px;
+    min-height: 669px;
 
     & .section1 {
         display: flex;
