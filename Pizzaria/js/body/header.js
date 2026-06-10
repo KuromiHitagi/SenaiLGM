@@ -4,21 +4,20 @@ const headerIndex = document.getElementById('header') || null
 function gerarHeader() {
     let isLog = sessionStorage.getItem("isLog") === "true"
     let defaultImg = "../../src/Images/user-icon.png"
-    let btnEstiloCarrinho = "opacity: 0.7;"
+    let btnEstiloCarrinho = "display: none;"
     let btnLogin = "<p>Login</p>"
     let alert = `onclick="alert('Você deve estar logado para acessar o carrinho!')"`
-    let rotaCarrinho = "#"
-    let rotaCardapio = "#"
+    let rotaCarrinho = ""
+    let rotaCardapio = "./menu.html"
     let rotaHome = "../index.html"
     let rotaLogin = "./login.html"
 
     if (isLog) {
         defaultImg = "../images/imagem_Logado.jpg"
-        btnEstiloCarrinho = "opacity: 1;"
+        btnEstiloCarrinho = "display: inline-block;"
         btnLogin = ""
         alert = null
         rotaCarrinho = "./carrinho.html"
-        rotaCardapio = "./menu.html"
     }
 
     const carrinho_icon = `

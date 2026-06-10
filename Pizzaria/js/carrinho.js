@@ -1,9 +1,7 @@
 let carrinho = JSON.parse(localStorage.getItem("MeuItem")) || [];
 
 function adicionarCarrinho(nome, preco) {
-    const isLog = sessionStorage.getItem("isLog");
-
-    if (!isLog) {
+    if (!isLoga) {
         alert("Você precisa estar logado para comprar algo!")
         return
     }
