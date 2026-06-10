@@ -17,30 +17,49 @@
         <section>
 
             <form onsubmit="cadastrar(event)">
-                <label for="nome">Nome</label>
-                <input id="nome" type="text" required>
 
-                <label for="idade">Idade</label>
-                <input id="idade" type="number" required>
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" size="50" required>
 
                 <label for="curso">Curso</label>
-                <input type="text" id="curso" required>
+                <input type="text" id="curso" size="50" required>
 
-                <label for="nota">Nota</label>
-                <input type="number" min="0" max="10" id="nota" required>
+                <div class="notas">
+
+                    <div>
+                        <label for="nota1">Nota 1</label>
+                        <input type="number" min="0" max="10" id="nota1" required>
+                    </div>
+
+                    <div>
+                        <label for="nota2">Nota 2</label>
+                        <input type="number" min="0" max="10" id="nota2" required>
+                    </div>
+                    
+                    <div>
+                        <label for="nota3">Nota 3</label>
+                        <input type="number" min="0" max="10" id="nota3" required>
+                    </div>
+
+                </div>
 
                 <button type="submit">Cadastrar</button>
+                
+
             </form>
 
-            <button onclick="exibir(event)">Show</button>
-            <button onclick="fechar(event)">Unshow</button>
+            <div class="btns">
+                <button onclick="limpar(event)">Limpar</button>
+                <button onclick="exibir(event)">Show</button>
+                <button onclick="fechar(event)">Unshow</button>
+            </div>
 
             <table id="table1">
-                
+
             </table>
 
         </section>
-    
+
     </main>
 
     <footer>
@@ -49,8 +68,8 @@
 </body>
 <script src="./script.js"></script>
 <script src="../Aulas/footer.js"></script>
-<script>
+<!-- <script>
     alert("Essa aula, é a introdução ao JS, porém devido ao meu conhecimento prévio, a aula 4, a qual contém o mesmo tema, tem um melhor código e estilização")
-</script>
+</script> -->
 
 </html>

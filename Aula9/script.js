@@ -1,37 +1,53 @@
 class Aluno {
-    constructor(userName, userIdade, userCurso, userNota, userStatus) {
+    constructor(userName, userCurso, userNota1, userNota2, userNota3, userMedia, userStatus, statusStyle) {
         this.nome = userName;
-        this.idade = userIdade;
         this.curso = userCurso;
-        this.nota = userNota;
+        this.nota1 = userNota1;
+        this.nota2 = userNota2;
+        this.nota3 = userNota3;
+        this.media = userMedia;
         this.status = userStatus; 
+        this.statusStyle = statusStyle; 
     }
 }
 
 let userLista = []
+let statusStyle = ""
 
 function cadastrar(event) {
     event.preventDefault()
 
     const userName = document.getElementById('nome').value
-    const userIdade = document.getElementById('idade').value
     const userCurso = document.getElementById('curso').value
-    const userNota = document.getElementById('nota').value
+    const userNota1 = parseInt(document.getElementById('nota1').value)
+    const userNota2 = parseInt(document.getElementById('nota2').value)
+    const userNota3 = parseInt(document.getElementById('nota3').value)
+    let statusStyle = ""
     let userStatus = ""
+    let userStatusMsg = ""
+
+    const userMedia = (userNota1 + userNota2 + userNota3) / 3
     
-    if(userNota >= 7) {
+    if(userMedia >= 6) {
         userStatus = "Aprovado"
-    } else if(userNota >= 4) {
+        statusStyle = "background-color: green;"
+        userStatusMsg = "Parabéns, continue assim!"
+    } else if(userMedia >= 4) {
         userStatus = "Recuperação"
+        statusStyle = "background-color: yellow;"
+        userStatusMsg = "Eu entendo o quão difícil as coisas podem ser mas, eu acredito em você!"
     } else {
         userStatus = "Reprovado"
+        statusStyle = "background-color: red;"
+        userStatusMsg = "Rapaiz... Acho que alguém vai apanhar da mãe.."
     }
 
-    const userNew = new Aluno(userName, userIdade, userCurso, userNota, userStatus)
+    const userNew = new Aluno(userName, userCurso, userNota1, userNota2, userNota3, userMedia, userStatus, statusStyle)
 
     userLista.push(userNew)
 
-    alert("Aluno " + userName + " cadastrado!")
+    alert(`Aluno ${userName} está ${userStatus}!`)
+    alert(userStatusMsg)
 
     event.target.reset()
 }
@@ -44,9 +60,11 @@ function exibir(event) {
         <thead>
             <tr>
                 <th>Nome</th>
-                <th>Idade</th>
                 <th>Curso</th>
-                <th>Nota</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Nota 3</th>
+                <th>Media</th>
                 <th>Status</th>
             </tr>
         </thead>
@@ -66,10 +84,12 @@ function exibir(event) {
         tbody.innerHTML += `
             <tr>
                 <td>${userLista[i].nome}</td>
-                <td>${userLista[i].idade}</td>
                 <td>${userLista[i].curso}</td>
-                <td>${userLista[i].nota}</td>
-                <td>${userLista[i].status}</td>
+                <td>${userLista[i].nota1}</td>
+                <td>${userLista[i].nota2}</td>
+                <td>${userLista[i].nota3}</td>
+                <td>${userLista[i].media.toFixed(1)}</td>
+                <td style="${userLista[i].statusStyle}">${userLista[i].status}</td>
             </tr>
         `
     }
@@ -79,4 +99,17 @@ function fechar(event) {
     event.preventDefault()
 
     table1.innerHTML = "";
+}
+
+function limpar(event) {
+
+    if(userLista.length == 0) {
+        alert("Você deve inserir algo antes de tentar apagar...")
+        return
+    }
+
+    userLista = [];
+
+    alert("Os usuários foram neutralizados!")
+    exibir(event)
 }
