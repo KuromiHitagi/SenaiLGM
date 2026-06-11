@@ -24,19 +24,23 @@
     <main>
 
         <section>
-            <form onsubmit="logar(event)">
-                <label for="emailName">Email ou Nome</label>
-                <input type="text" id="emailName">
+            <div class="img">
+                <img src="../images/imagem_Logado.jpg" alt="">
+            </div>
 
-                <label for="password">Senha</label>
-                <input type="password" id="password">
+            <div class="dados">
+                <h2 id="nome"></h2>
 
-                <button type="submit">Logar</button>
-            </form>
+                <h2 id="email"></h2>
 
-            <!-- <button onclick="logar('teste', 1234)">Logar</button> -->
+                <h2 id="endereco"></h2>
+
+                <h2 id="cpf"></h2>
+
+                <h2 id="telefone"></h2>
+            </div>
+
             <button onclick="deslogar()">Deslogar</button>
-            <button onclick="{window.location.href = 'form.html'}">Criar conta</button>
         </section>
         
     </main>
@@ -49,14 +53,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cryptojs/4.1.1/crypto-js.min.js"></script>
 
 <script src="../js/register/cliente.js"></script>
-<script src="../js/login.js"></script>
+<script src="../js/perfil.js"></script>
 
 <script src="../js/body/header.js"></script>
 <script src="../js/body/footer.js"></script>
 
 <script>
-    if(sessionStorage.getItem("isLog") == "true") {
-        window.location.href = "perfil.html"
+    if(sessionStorage.getItem("isLog") != "true") {
+        alert("Saindo!")
+        window.location.href = "login.html"
     }
 </script>
 

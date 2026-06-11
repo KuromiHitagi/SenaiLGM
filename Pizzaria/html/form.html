@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet" />
+
     <title>Forno&Codigo - form</title>
 
-    <link rel="stylesheet" href="../css/formStyle.css">
+    <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/header.css">
 </head>
 
 <body>
-    
+
     <header>
         <!-- Aqui será renderizado o 'header.js' -->
     </header>
@@ -25,14 +29,22 @@
     <main>
 
         <section class="section1">
+
             <div id="image" class="divImage">
-                <!-- Aqui será renderizado a imagem relacionada ao formulário -->
+                 <img src="../images/imagem_Logado.jpg" alt="" 
+                 style="border: 1px solid #ffbd59; border-radius: 50%;">
+
+                 <button onclick="alert('Isso daqui é meramente decorativo')" 
+                 style="letter-spacing: 2px; background-color: #3b3737; color: #ffbd59; border: none; border-radius: 15px; padding: 10px; margin-top: 15px;">
+                    Selecionar imagem <br>(opcional)
+                </button>
             </div>
+
         </section>
 
         <section class="section2">
 
-            <form id="form" class="form"  method="get">
+            <form id="form" class="form" method="get">
                 <!-- Aqui será renderizado o Formulário -->
             </form>
 
@@ -45,10 +57,14 @@
     </footer>
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cryptojs/4.1.1/crypto-js.min.js"></script>
+
 <script src="../js/body/header.js"></script>
 <script src="../js/body/footer.js"></script>
-<script src="../js/form.js"></script>
-<script src="../js/icon.js"></script>
-<script src="../js/script.js"></script>
+
+<script src="../js/register/cliente.js"></script>
+<script>
+    FormularioCliente()
+</script>
 
 </html>

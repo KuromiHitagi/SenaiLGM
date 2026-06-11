@@ -8,6 +8,7 @@ footer {
     flex-direction: row;
 
     height: auto;
+    max-height: 110px;
     width: 100%;
 
     background-color: #401d15;
@@ -71,7 +72,7 @@ footer {
         height: 100%;
 
         .content {
-            margin-top: 10%;
+            margin-top: 15px;
 
             a {
                 color: white;

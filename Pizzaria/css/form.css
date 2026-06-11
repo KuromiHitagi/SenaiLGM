@@ -6,7 +6,7 @@ main {
     flex-direction: row;
 
     width: 100%;
-    min-height: 669px;
+    height: 698px;
 
     & .section1 {
         display: flex;
@@ -16,8 +16,6 @@ main {
 
         width: 50%;
         height: 100%;
-
-        background-color: #5d2828;
 
         & .divImage {
             position: relative;
@@ -74,7 +72,7 @@ main {
         width: 50%;
         height: 100%;
 
-        background-color: #ff914d;
+        background-color: #0e0d0d;
 
         & .form {
             display: flex;
@@ -82,20 +80,21 @@ main {
             align-items: start;
             flex-direction: column;
 
-            width: 50%;
-            min-height: 50%;
+            width: 600px;
+            height: 550px;
             margin: auto;
             padding: 15px;
 
             border: 1px solid black;
             border-radius: 15px;
-            background-color: #ffa3a7;
+            background-color: #3b3737;
 
             color: white;
 
             & .title {
                 position: relative;
                 top: 0;
+
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -107,15 +106,10 @@ main {
 
                 border: none;
                 border-radius: 12px 12px 0 0;
-                background-color: #bb3036;
-            }
+                background-color: #800909;
 
-            & .Ccod {
-                border: none;
-                border-radius: 10px;
-                align-self: center;
-                text-align: center;
-                width: fit-content;
+                color: #ffbd59;
+                text-shadow: -2px 2px 2px #272424;
             }
 
             & .dados {
@@ -129,8 +123,21 @@ main {
 
                 & .labelInput {
                     position: relative;
+                    
                     margin: auto;
-                    width: 90%;
+                    width: 100%;
+
+                    display: flex;
+
+                    & label{
+                        letter-spacing: 2px;
+                    }
+
+                    & .input{
+                        flex: 1;
+                        display: flex;
+                        justify-content: end;
+                    }
 
                     &:hover {
                         & p {
@@ -159,11 +166,13 @@ main {
                     }
 
                     & input {
-                        width: 100%;
+                        max-width: 430px;
                         height: 30px;
+                        padding-left: 5px;
 
                         border: none;
                         border-radius: 10px;
+                        letter-spacing: normal;
                     }
                 }
             }
@@ -186,7 +195,7 @@ main {
                         & p {
                             opacity: 1;
                             visibility: visible;
-                            transform: translate3d(70%, 55%, 0);
+                            transform: translate3d(70%, 55%, 0);    
                         }
                     }
 
@@ -196,7 +205,7 @@ main {
                         right: 0;
 
                         width: 150%;
-                        
+                        z-index: 1000;
 
                         background-color: rgba(255, 255, 255, 0.822);
                         color: black;
@@ -221,6 +230,7 @@ main {
                         border-radius: 10px;
                         cursor: pointer;
                         transition: all ease-in-out 0.2s;
+                        letter-spacing: 2px;
 
                         &:hover {
                             transform: scale(105%);
