@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
 
+    <script>
+        if (sessionStorage.getItem("isLog") == "true") {
+            window.location.href = "perfil.html"
+        }
+    </script>
+
     <title>Forno&Codigo - menu</title>
 </head>
 
@@ -24,21 +30,42 @@
     <main>
 
         <section>
-            <form onsubmit="logar(event)">
-                <label for="emailName">Email ou Nome</label>
-                <input type="text" id="emailName">
+            <form class="form" onsubmit="logar(event)">
 
-                <label for="password">Senha</label>
-                <input type="password" id="password">
+                <div class="title">
+                    <h2>Login</h2>
+                </div>
+
+                <div class="labelInput">
+                    <label for="email">Email</label>
+
+                    <div class="inputDiv">
+                        <input type="text" id="email">
+                    </div>
+                </div>
+
+                <div class="labelInput">
+                    <label for="name">Nome</label>
+
+                    <div class="inputDiv">
+                        <input type="text" id="name">
+                    </div>
+                </div>
+
+                <div class="labelInput">
+                    <label for="password">Senha</label>
+
+                    <div class="inputDiv">
+                        <input type="password" id="password">
+                    </div>
+                </div>
 
                 <button type="submit">Logar</button>
             </form>
 
-            <!-- <button onclick="logar('teste', 1234)">Logar</button> -->
-            <button onclick="deslogar()">Deslogar</button>
             <button onclick="{window.location.href = 'form.html'}">Criar conta</button>
         </section>
-        
+
     </main>
 
     <footer id="footer">
@@ -53,11 +80,5 @@
 
 <script src="../js/body/header.js"></script>
 <script src="../js/body/footer.js"></script>
-
-<script>
-    if(sessionStorage.getItem("isLog") == "true") {
-        window.location.href = "perfil.html"
-    }
-</script>
 
 </html>

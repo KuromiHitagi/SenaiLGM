@@ -18,10 +18,11 @@ function obterUsuarioLogado() {
 /**/
 
 function logar(event) {
-    const emailName = document.getElementById("emailName").value;
+    const email = document.getElementById("email").value;
+    const name = document.getElementById("name").value;
     const senha = document.getElementById("password").value;
 
-    if(emailName == "admin" && senha == "admin") {
+    if((email == "admin" || name == "admin") && senha == "admin") {
         sessionStorage.setItem("isLog", true)
         sessionStorage.setItem("isLogAdmin", true)
         alert("You're Welcome Boss!")
@@ -35,7 +36,7 @@ function logar(event) {
     const trueNome = credenciais.nome
     const trueSenha = credenciais.senha
 
-    if((emailName == trueEmail || emailName == trueNome) && senha == trueSenha) {
+    if((email == trueEmail || name == trueNome) && senha == trueSenha) {
         sessionStorage.setItem("isLog", true)
         alert("Logado com sucesso!")
         window.location.href = "../index.html";

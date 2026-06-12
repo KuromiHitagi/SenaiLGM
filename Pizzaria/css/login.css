@@ -6,6 +6,8 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+
 }
 
 section {
@@ -15,4 +17,47 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+
+    background-image: url("../images/pizza-background.png");
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    height: auto;
+    max-height: 450px;
+    width: 35%;
+
+    border: none;
+    border-radius: 15px;
+
+    background-color: #3b3737;
+
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 45px;
+
+        border: none;
+        border-radius: 14px 14px 0px 0px;
+
+        background-color: #800909;
+        color: #ffbd59;
+        text-shadow: -2px 2px 2px #272424;
+    }
+
+    .labelInput{
+        width: 80%;
+        color: white;
+        
+        
+    }
 }
