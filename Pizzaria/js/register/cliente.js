@@ -29,10 +29,13 @@ function FormularioCliente() {
                     <div class="dados"> 
 
                         <div class="labelInput">
-                            <p>Escreva seu nome:</p>
                             <label for="Cnome">Nome:</label>
                             
                             <div class="input">
+                                <div class="tooltip">
+                                    <p>Escreva o seu Nome</p>
+                                </div>
+
                                 <input id="Cnome" type="text" maxLength="45" size="50" required>
                             </div>
                         </div>
@@ -40,10 +43,13 @@ function FormularioCliente() {
 
 
                         <div class="labelInput">
-                            <p>Digite seu email:</p>
                             <label for="Cemail">Email:</label>
                             
                             <div class="input">
+                                <div class="tooltip">
+                                    <p>Digite seu email:</p>
+                                </div>
+
                                 <input id="Cemail" type="email" maxLength="45" size="50" required>
                             </div>
                         </div>
@@ -51,10 +57,14 @@ function FormularioCliente() {
                         
 
                         <div class="labelInput">
-                            <p>Envie sua senha:</p>
+                            
                             <label for="Cpassword">Senha:</label>
                             
                             <div class="input">
+                                <div class="tooltip">
+                                    <p>Envie sua senha:</p>
+                                </div>
+
                                 <input id="Cpassword" type="password" maxLength="45" size="50" required>
                             </div>
                         </div>
@@ -62,10 +72,13 @@ function FormularioCliente() {
                         
                         
                         <div class="labelInput">
-                            <p>Informe seu endereço:</p>
                             <label for="Cendereco">Endereço:</label>
                             
                             <div class="input">
+                                <div class="tooltip">
+                                    <p>Informe seu endereço:</p>
+                                </div>
+
                                 <input id="Cendereco" type="text" maxLength="45" size="50" required>
                             </div>
                         </div>
@@ -73,10 +86,13 @@ function FormularioCliente() {
 
 
                         <div class="labelInput">
-                            <p>Coloque seu CPF <br> sem pontos e traço:</p>
                             <label for="Ccpf">CPF:</label>
                             
                             <div class="input">
+                                <div class="tooltip">
+                                    <p>Coloque seu CPF sem pontos e traço:</p>
+                                </div>
+
                                 <input id="Ccpf" type="text" maxLength="11" size="50" required>
                             </div>
                         </div>
@@ -84,10 +100,13 @@ function FormularioCliente() {
 
 
                         <div class="labelInput">
-                            <p>Insira seu Telefone <br> sem traço:</p>
                             <label for="Ctelefone">Telefone:</label>
                             
                             <div class="input">
+                                <div class="tooltip">
+                                    <p>Insira seu Telefone sem traço:</p>
+                                </div>
+
                                 <input id="Ctelefone" type="text" maxLength="11" size="50" required>
                             </div>
                         </div>
@@ -123,7 +142,7 @@ function cadastrarCliente(event) {
         // Pegando os valores dos seus inputs
         const nome = document.getElementById("Cnome").value;
         const email = document.getElementById("Cemail").value;
-        const senha = document.getElementById("Cpassword").value; 
+        const senha = document.getElementById("Cpassword").value;
         const endereco = document.getElementById("Cendereco").value;
         const cpf = document.getElementById("Ccpf").value;
         const telefone = document.getElementById("Ctelefone").value;
@@ -144,7 +163,7 @@ function cadastrarCliente(event) {
         // Salvando no sessionStorage
         sessionStorage.setItem("usuario_sessao", dadosCriptografados);
         console.log("5. Salvo no sessionStorage!");
-        
+
         alert("Cadastrado com sucesso!");
         window.location.href = "login.html"
 

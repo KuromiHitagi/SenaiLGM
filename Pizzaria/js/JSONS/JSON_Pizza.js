@@ -8,7 +8,6 @@ class Pizza {
         this.titulos = titulos;
         this.descricoes = descricoes;
     }
-
 }
 
 

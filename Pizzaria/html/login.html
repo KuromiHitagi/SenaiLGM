@@ -37,33 +37,49 @@
                 </div>
 
                 <div class="labelInput">
-                    <label for="email">Email</label>
+                    <label for="email">Email:</label>
 
                     <div class="inputDiv">
+                        <div class="tooltip">
+                            <p>Escreva o seu E-mail aqui ou seu Nome no campo abaixo</p>
+                        </div>
+
                         <input type="text" id="email">
                     </div>
                 </div>
 
+                <div class="gap">
+                    <h2>ou</h2>
+                </div>
+
                 <div class="labelInput">
-                    <label for="name">Nome</label>
+                    <label for="name">Nome:</label>
 
                     <div class="inputDiv">
+                        <div class="tooltip">
+                            <p>Escreva o seu Nome aqui ou seu E-mail no campo acima</p>
+                        </div>
+
                         <input type="text" id="name">
                     </div>
                 </div>
 
-                <div class="labelInput">
-                    <label for="password">Senha</label>
+                <div class="labelInput password">
+                    <label for="password">Senha:</label>
 
                     <div class="inputDiv">
+                        <div class="tooltip">
+                            <p>Escreva a sua senha</p>
+                        </div>
+
                         <input type="password" id="password">
                     </div>
                 </div>
 
-                <button type="submit">Logar</button>
+                <button class="grow" type="submit">Logar</button>
             </form>
 
-            <button onclick="{window.location.href = 'form.html'}">Criar conta</button>
+            <button class="btnCriarConta grow" onclick="{window.location.href = 'form.html'}">Criar conta</button>
         </section>
 
     </main>
