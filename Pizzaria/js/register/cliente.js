@@ -66,6 +66,7 @@ function FormularioCliente() {
                                 </div>
 
                                 <input id="Cpassword" type="password" maxLength="45" size="50" required>
+                                <button type="button" style="color: black; letter-spacing: normal; font-size: 14px;" id="btn-olho" onclick="alternarSenha()">Mostrar</button>
                             </div>
                         </div>
 
@@ -104,7 +105,7 @@ function FormularioCliente() {
                             
                             <div class="input">
                                 <div class="tooltip">
-                                    <p>Insira seu Telefone sem traço:</p>
+                                    <p>Insira seu Telefone (ex: 11999997777):</p>
                                 </div>
 
                                 <input id="Ctelefone" type="text" maxLength="11" size="50" required>
@@ -131,6 +132,19 @@ function FormularioCliente() {
 
 function cancelar(event) {
     event.target.reset()
+}
+
+function alternarSenha() {
+    const campoSenha = document.getElementById("Cpassword");
+    const botaoOlho = document.getElementById("btn-olho");
+
+    if (campoSenha.type === "password") {
+        campoSenha.type = "text";
+        botaoOlho.textContent = "Esconder";
+    } else {
+        campoSenha.type = "password";
+        botaoOlho.textContent = "Mostrar";
+    }
 }
 
 /*Essa parte foi realizada com ajuda do Gemini*/

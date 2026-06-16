@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/perfil.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
 
@@ -16,7 +17,7 @@
         }
     </script>
 
-    <title>Forno&Codigo - menu</title>
+    <title>Forno&Codigo - Perfil</title>
 </head>
 
 <body>
@@ -31,24 +32,61 @@
     <main>
 
         <section>
-            <div class="img">
-                <img src="../images/imagem_Logado.jpg" alt="">
+
+            <div class="divImage">
+                 <img src="../images/imagem_Logado.jpg" alt="" 
+                 style="border: 1px solid #ffbd59; border-radius: 50%;">
+
+                <button onclick="alert('Isso daqui é meramente decorativo')" 
+                 style="letter-spacing: 2px; background-color: #3b3737; font-size: 16px; color: #ffbd59; border: none; border-radius: 15px; padding: 10px; width: 140px;margin-top: 15px; cursor: pointer;">
+                    Editar
+                </button>
             </div>
+
+        </section>
+
+        <section>
 
             <div class="dados">
-                <h2 id="nome"></h2>
 
-                <h2 id="email"></h2>
+                <div class="labelInput">
+                    <h2 class="h2">Nome: </h2>
 
-                <h2 id="endereco"></h2>
+                    <div class="inputDiv">
+                        <h2 id="nome"></h2>
+                    </div>
+                </div>
 
-                <h2 id="cpf"></h2>
+                <div class="labelInput">
+                    <h2 class="h2">Email: </h2>
 
-                <h2 id="telefone"></h2>
+                    <div class="inputDiv">
+                        <h2 id="email"></h2>
+                    </div>
+                </div>
+
+                <div class="labelInput">
+                    <h2 class="h2">Endereço: </h2>
+
+                    <div class="inputDiv">
+                        <h2 id="endereco"></h2>
+                    </div>
+                </div>
+
+                <div class="labelInput">
+                    <h2 class="h2">Telefone: </h2>
+
+                    <div class="inputDiv">
+                        <h2 id="telefone"></h2>
+                    </div>
+                </div>
+
             </div>
 
-            <button onclick="deslogar()">Deslogar</button>
+            <button style="font-size: 16px;" onclick="alert('Função de edição não implementada ainda.')">Editar</button>
         </section>
+
+        <button style="position: absolute; bottom: 20%; width: 160px; height: 40px; border: none; border-radius: 15px; color: #e4e4e4; font-size: 16px; background-color: #d8373f;" onclick="deslogar()">Logout</button>
 
     </main>
 

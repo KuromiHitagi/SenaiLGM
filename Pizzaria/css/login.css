@@ -14,6 +14,7 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-image: url("../images/pizza-background.png");
 }
 
 section {
@@ -23,9 +24,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-
-    background-image: url("../images/pizza-background.png");
+    flex-direction: column;   
 }
 
 .form {
@@ -101,6 +100,23 @@ section {
                     border: 2px solid #3b3737;
                     box-shadow: -1px 1px 2px 1px #272424;
                 }
+            }
+
+            #password {
+                padding-right: 40px; 
+            }
+
+            #btn-olho {
+                position: absolute;
+                right: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                z-index: 2;
             }
 
             .tooltip {

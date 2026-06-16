@@ -23,14 +23,12 @@ function exibirDados() {
     const nome = document.getElementById("nome")
     const email = document.getElementById("email")
     const endereco = document.getElementById("endereco")
-    const cpf = document.getElementById("cpf")
     const telefone = document.getElementById("telefone")
 
     if (sessionStorage.getItem("isLogAdmin") == "true") {
         nome.innerText = `admin`
         email.innerText = `admin`
         endereco.innerText = `admin`
-        cpf.innerText = `admin`
         telefone.innerText = `admin`
     } else {
         const credenciais = obterUsuarioLogado()
@@ -38,7 +36,6 @@ function exibirDados() {
         nome.innerText = `${credenciais.nome}`
         email.innerText = `${credenciais.email}`
         endereco.innerText = `${credenciais.endereco}`
-        cpf.innerText = `${credenciais.cpf}`
         telefone.innerText = `${credenciais.telefone}`
     }
 }

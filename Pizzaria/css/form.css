@@ -143,17 +143,16 @@ main {
                         .tooltip {
                             position: absolute;
                             z-index: 10;
-                            bottom: 120%;
-                            left: 50%;
+                            bottom: 105%;
                             transform: translate(-50%, 10px);
 
                             width: max-content;
                             white-space: nowrap;
 
-                            background-color: #800909;
+                            background-color: #3b3737;
                             padding: 6px 12px;
                             border: 1px solid #ffbd59;
-                            border-radius: 8px;
+                            border-radius: 8px 8px 8px 0px;
                             color: #ffbd59;
                             font-size: 14px;
                             text-align: center;
@@ -181,6 +180,19 @@ main {
                         border-radius: 10px;
                         letter-spacing: normal;
                         color: black;
+                    }
+
+                    #btn-olho {
+                        position: absolute;
+                        right: 50px;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        padding: 0;
+                        z-index: 2;
                     }
                 }
             }
