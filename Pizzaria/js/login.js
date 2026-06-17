@@ -58,11 +58,6 @@ function logar(event) {
     }
 }
 
-function deslogar() {
-    sessionStorage.setItem("isLog", false)
-    window.location.reload();
-}
-
 function alternarSenha() {
     const campoSenha = document.getElementById("password");
     const botaoOlho = document.getElementById("btn-olho");

@@ -45,6 +45,7 @@ exibirDados()
 
 function deslogar() {
     sessionStorage.setItem("isLog", false)
-    sessionStorage.removeItem("usuario_sessao", false)
+    sessionStorage.removeItem("isLogAdmin")
+    sessionStorage.removeItem("usuario_sessao")
     window.location.reload();
 }

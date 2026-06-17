@@ -64,11 +64,16 @@ function decision(num) {
     if (num == 1) {
         carrinho.length = 0
 
+        localStorage.removeItem("MeuItem")
+
+        alert("Compra cancelada e carrinho limpo!")
         showCarrinho();
     }
     else if (num == 2) {
         if (carrinho && carrinho.length > 0) {
             carrinho.length = 0
+
+            localStorage.removeItem("MeuItem")
 
             alert("Compra realizada com sucesso!")
             showCarrinho();
