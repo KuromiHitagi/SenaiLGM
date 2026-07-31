@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jojo</title>
+</head>
+<body style="width: 100vw; height: 100vh; overflow-x: hidden;">
+
+    <script>
+        let peso = parseFloat(prompt("Digite o peso: "))
+        let altura = parseFloat(prompt("Digite a altura: "))
+
+        let imc = peso / (altura**2)
+        let msg
+
+        if(imc < 18.5) {
+            msg = "Abaixo do peso"
+        } else if(imc < 24.9) {
+            msg = "Peso ideal (parabéns)"
+        } else if(imc < 29.9) { 
+            msg = "Levemente acima do peso"
+        } else if(imc < 34.9) {
+            msg = "Obesidade grau I"
+        } else if(imc < 39.9) {
+            msg = "Obesidade grau II (severa)"
+        } else if(imc > 39.9 ) {
+            msg = "Obesidade grau III (mórbida)"
+        }
+
+        let text = document.getElementById("text")
+        let textImc = document.getElementById("imc")
+
+        function jojo() {
+            text.innerText = msg
+            textImc.innerText = imc.toFixed(2)
+        }
+
+        setTimeout(jojo, 500)
+    </script>
+
+    <main style="width: 100%; height: 100%;">
+
+        <section style="width: 100%; height: 100%;">
+
+            <div class="middle" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <h1 id="text"></h1>
+                <p id="imc"></p>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+</html>
