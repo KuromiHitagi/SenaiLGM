@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+<body>
+    <script>
+        let round;
+        let op;
+        let valorDoacao = 0.0;
+        let numDoacoes = 0;
+        do{
+            round = true;
+            op = insertInt();
+
+            switch(op){
+                case 1:
+                    alert("Obridado pela doação de R$ 10");
+                    valorDoacao += 10;
+                    break;
+                case 2:
+                    alert("Obridado pela doação de R$ 20");
+                    valorDoacao += 20;
+                    break;
+                case 3:
+                    alert("Obridado pela doação de R$ 30");
+                    valorDoacao += 30;
+                    break;
+                case 4:
+                    alert("Obridado pela doação de R$ 40");
+                    valorDoacao += 40;
+                    break;
+                case 5:
+                    let valorEscol = insertValor();
+            
+                    alert(`Obrigado por doar R$ ${valorEscol}!!`);
+                    valorDoacao += valorEscol;
+                    break;
+                case 6:
+                    if (valorDoacao > 0){
+
+                        if(valorDoacao == 1){
+                            alert(`Obrigado por doar ${numDoacoes} vez R$ ${valorDoacao}!!!`);
+                        }else{
+                            alert(`Obrigado por doar ${numDoacoes} vezes R$ ${valorDoacao}!!!`);
+                        }
+                       
+                    round = false; 
+                    }else{
+                        alert("Obrigada pelo tempo!!!")
+                    }
+
+                    break;
+            }
+
+            if (round){
+                numDoacoes++;
+            }
+
+        }while(round)
+
+        function insertInt(){
+            let valor;
+            let valorTrat;
+            let round;
+
+            do{
+                round = false;
+
+                valor = prompt("Senai Esperança\nDigite para...\n1 - Doar R$ 10\n2 - Doar R$20\n3 - Doar R$30\n4 - Doar R$50\n5- Doar outro valor\n6 - Sair");
+
+                valorTrat = parseInt(valor)
+                if (isNaN(valorTrat)){
+                    alert("Digite um número");
+                    round = true;
+                }
+
+                if (valor < 0 || valor > 6){
+                    alert("Digite uma das opções");
+                }
+
+            }while(round);
+
+            return valorTrat;
+        }
+        
+        function insertValor(){
+            let valor;
+            let valorTrat;
+            let round;
+
+            do{
+                round = false;
+
+                valor = prompt("Digite o valor que deseja doar: ");
+
+                valorTrat = parseInt(valor)
+                if (isNaN(valorTrat)){
+                    alert("Digite um número");
+                    round = true;
+                }
+
+                if (valor < 0){
+                    alert("Digite um valor válido!!");
+                }
+
+            }while(round);
+
+            return valorTrat;
+        }
+    </script>
+</body>
+</html>

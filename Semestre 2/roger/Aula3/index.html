@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+</head>
+<style>
+    #cred{
+        display: none;
+    }
+    #crediar{
+        display: none;
+    }
+    #btn{
+        background-color: aqua;
+        width: 100px;
+        text-align: center;
+    }
+</style>
+<body>
+    <script>
+        /*
+        let round = false;
+        let valor;
+        let escolha;
+
+        do{
+            
+            
+            valor = insertInt();
+
+            escolha = parseInt(prompt("Forma de pagamento:\n1 - Á vista\n2 - Débito\n3 - Crédito (até 10x)\n4 - Crediário"));
+
+            switch (escolha){
+                case 1:
+                    alert(`Sua compra tem 5% de desconto!\nO novo valor a se pagar é de R$ R$ ${valor * 0.95}`);
+                    break;
+                case 2:
+                    alert(`O valor de sua compra é de R$ ${valor}, insira ou aproxime o cartão`)
+                    break;
+                case 3:
+                    let parselasCred = parseInt(prompt("Digite a quantidade de parcelas desejada: "));
+                    
+                    if (parselasCred > 1){
+
+                        let valorParcela = (valor/ parselasCred).toFixed(2);
+                        alert(`O valor de suas ${parselasCred} é de R${valorParcela}`);
+                    }else{
+                        alert(`O valor de sua compra é de R$ ${valor}`)
+                    }
+                    break;
+                case 4:
+                    let parcelas = parseInt(prompt("Digite a quantidade de parcelas: "))
+                    let juros;
+
+                    if(parcelas > 7){
+                        juros = 1.09;
+                    }else if (parcelas > 5){
+                        juros = 1.07;
+                    }else if (parcelas > 3){
+                        juros = 1.05;
+                    }else if(parcelas <= 3){
+                        juros = 1.03;
+                    }
+                    let valorWithJuros = valor * juros;
+                    let valorParcela = (valorWithJuros/ parcelas).toFixed(2)
+
+                    alert(`O valor total do protudo é de R$ ${valorWithJuros} e com as ${parcelas} parcelas o valor mensal de seu carnê é de ${valorParcela} `)
+                    break;
+                default:
+                    round = true;
+                    alert(`Valor inválido!!`);
+            }
+        }while(round)
+
+
+        function insertInt(){
+            let valor;
+            let valorTrat;
+            let round;
+
+            do{
+                round = false;
+
+                valor = prompt("Qual é o valor do produto: ");
+
+                valorTrat = parseInt(valor)
+                if (isNaN(valorTrat)){
+                    alert("Digite um valor");
+                    round = true;
+                }
+            }while(round);
+
+            return valorTrat;
+        }*/
+        function parcelas(){
+            let pagamento = document.getElementById("formPagamento").value;
+            let valor = document.getElementById("valor").value;
+            let resp = document.getElementById("resp");
+
+            let cred = document.getElementById("cred");
+            let crediar = document.getElementById("crediar");
+
+            switch (pagamento){
+                case "AVista":
+                    cred.style.display = "none";
+                    crediar.style.display = "none";
+
+                    /*let valorWithDesconto = valor * 0.95;
+                    resp.innerHTML = `Valor a ser pago R$ ${valorWithDesconto}`;
+                    */
+                    break;
+                case "debito":
+                    cred.style.display = "none";
+                    crediar.style.display = "none";
+
+                    //resp.innerHTML = `Valor a ser pago R$ ${valor}`;
+                    break;
+                case "credito":
+                    crediar.style.display = "none";
+
+                    cred.style.display = "block";
+                    break;
+                case "crediario":
+                    cred.style.display = "none";
+
+                    crediar.style.display = "block";
+                    break
+            }
+        }
+
+        
+    </script>
+
+    <h1>Sys Pagamento</h1>
+    <form action="">
+        <label for="valor">Valor da compra: </label> <input type="number" name="valor" id="valor" min="1" step="0.01" placeholder="1200.00">
+        
+        <label for="formPagamento">Forma de pagamento: </label>
+        <select name="formPagamento" id="formPagamento" onclick="parcelas()">
+            <option value="AVista">Á vista</option>
+            <option value="debito">Débito</option>
+            <option value="credito">Crédito</option>
+            <option value="crediario">Crediário</option>
+        </select>
+
+        <div id="cred">
+            <label for="numParcelas">Número de parcelas</label>
+            <input type="number" name="numParcelas" id="numParcelas" min="1" max="10">
+        </div>
+
+        <div id="crediar">
+            <label for="numParcelas">Número de parcelas</label>
+            <input type="number" name="numParcelas" id="numParcelas" min="1">
+        </div>
+
+        <div id="btn">
+            Calcular
+        </div>
+    </form>
+
+    <div id="resp">
+        <p id="resp"></p>
+
+    </div>
+</body>
+</html>

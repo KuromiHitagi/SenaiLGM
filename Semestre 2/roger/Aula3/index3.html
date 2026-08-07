@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+<body>
+    <script>
+        let numPessoas = escolNumPessoas();
+        let somaAlt = 0.0
+        let somaPeso = 0.0
+        let maiorPeso;
+        let maiorAtl;
+        let numCasados = 0;
+        let numSolteiros = 0;
+
+        for (let i = 0; i < numPessoas; i++){
+            
+
+            let nome = prompt("Digite seu nome: ")
+
+            let round;
+            let estadoCivil;
+            do{
+                round = false 
+
+                let escolEstado = parseInt(prompt("Estado civil...\n1 - Solteiro\n2 - Casado"))
+
+                switch (escolEstado){
+                    case 1:
+                        estadoEstado = "Solteiro";
+                        numSolteiros++;
+                        break
+                    case 2:
+                        escolEstado = "Casado";
+                        numCasados++;
+                        break
+                    default:
+                        alert("Escolha um estado civil!!")
+                        round = true;
+
+                }
+            }while(round);
+
+            let peso = insertFloat("Digite seu peso: ");
+            somaPeso += peso;
+
+            let altura = insertFloat("Digite sua altura: ")
+            somaAlt += altura
+
+            if (i == 0){
+                maiorAtl = altura
+                maiorPeso = peso
+            }
+
+            if(maiorAtl < altura){
+                maiorAtl = altura
+            }
+
+            if (maiorPeso < peso){
+                maiorPeso = peso
+            }
+        }
+
+        let mediaAlt = (somaAlt/numPessoas).toFixed(2)
+        let mediaPeso = (somaPeso/numPessoas).toFixed(2)
+
+        alert(`Número de casados: ${numCasados}\nNúmero de solteiros: ${numSolteiros}\nMédia de altura: ${mediaAlt}\nMédia peso: ${mediaPeso}\nMaior altura: ${maiorAtl}\nMaior peso: ${maiorPeso}`)
+
+        function escolNumPessoas(){
+            let valor;
+            let valorTrat;
+            let round;
+
+            do{
+                round = false;
+
+                valor = prompt("Digite o número de pessoas que serão cadastradas: ");
+
+                valorTrat = parseInt(valor)
+                if (isNaN(valorTrat)){
+                    alert("Digite um número");
+                    round = true;
+                }
+
+                if (valorTrat <= 0){
+                    alert("Digite um quantidade válida!!");
+                }
+
+            }while(round);
+
+            return valorTrat;
+        }
+
+        function insertFloat(texto){
+            let valor;
+            let valorTrat;
+            let round;
+
+            do{
+                round = false;
+                valor = prompt(texto);
+                valorTrat = parseFloat(valor);
+
+                if (isNaN(valorTrat) || valorTrat <= 0){
+                    alert("Digite um valor válido maior que 0!");
+                    round = true;
+                }
+
+            } while(round);
+
+            return valorTrat;
+        }
+    </script>
+</body>
+</html>
