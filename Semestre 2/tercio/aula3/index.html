@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Avançado — Aula 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="nav-principal">
+            <a href="#" class="nav-principal__logo">SENAI</a>
+            <ul class="nav-principal__links">
+                <li><a href="#" class="nav-principal__link nav-principal__link--ativo">Início</a></li>
+                <li><a href="#" class="nav-principal__link">Cursos</a></li>
+                <li><a href="#" class="nav-principal__link">Laboratórios</a></li>
+                <li><a href="#" class="nav-principal__link">Contato</a></li>
+            </ul>
+        </nav>
+    <main>
+        <section class="destaque">
+            <h2>Por que CSS avançado importa?</h2>
+            <p>Escrever CSS profissionalmente significa código organizado e reutilizável.</p>
+            <button class="btn-primario">Saiba mais</button>
+        </section>
+    </main>
+    <section class="cards">
+        <div class="card">
+            <h3>Card 1</h3>
+            <p>Primeiro card.</p><a href="#" class="link-card">Ler mais</a>
+        </div>
+        <div class="card">
+            <h3>Card 2</h3>
+            <p>Segundo card.</p><a href="#" class="link-card">Ler mais</a>
+        </div>
+        <div class="card">
+            <h3>Card 3</h3>
+            <p>Terceiro card.</p><a href="#" class="link-card">Ler mais</a>
+        </div>
+        <div class="card">
+            <h3>Card 4</h3>
+            <p>Quarto card.</p><a href="#" class="link-card">Ler mais</a>
+        </div>
+        <div class="card-avancado">
+            <div class="card-avancado__imagem"><span class="card-avancado__badge">Novo</span></div>
+            <div class="card-avancado__conteudo">
+                <h3 class="card-avancado__titulo">Desenvolvimento Web</h3>
+                <p class="card-avancado__descricao">Aprenda HTML, CSS e JavaScript.</p>
+                <a href="#" class="card-avancado__link">Inscreva-se →</a>
+            </div>
+    </section>
+
+    <section class="formulario">
+        <h2>Formulário de Contato</h2>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <section class="destasque">
+        <button class="btn-senai">
+            <span class="btn-senai__texto">Clique aqui</span>
+            <span class="btn-senai__icone">→</span>
+        </button>
+    </section>
+    <footer>
+        <p>© 2026 SENAI Anchieta</p>
+    </footer>
+</body>
+
+</html>
