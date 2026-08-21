@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script>
+        function limpar() {
+            document.getElementById("globo1").style.backgroundColor = "#303030"
+            document.getElementById("globo2").style.backgroundColor = "#303030"
+            document.getElementById("globo3").style.backgroundColor = "#303030"
+        }
+
+        function verify(op) {
+            let img = document.querySelector("img");
+
+            switch (op) {
+                case 1:
+                    limpar()
+                    document.getElementById("globo1").style.backgroundColor = "rgb(255, 0, 0)"
+                    img.src = "https://cdn-icons-png.flaticon.com/512/827/827428.png"
+                    document.getElementById("acidente").style.display = "block"
+
+                    setTimeout(() => {
+                        alert("Pare!")
+                        document.getElementById("acidente").style.display = "none"
+                    }, 500)
+                    break;
+
+                case 2:
+                    limpar()
+                    document.getElementById("globo2").style.backgroundColor = "rgb(255, 255, 0)"
+                    img.src = "https://cdn-icons-png.flaticon.com/512/1964/1964422.png"
+                    document.getElementById("acidente").style.display = "block"
+
+                    setTimeout(() => {
+                        alert("E por isso crianças, diminuam a velocidade no sinal amarelo, e não cruzem o sinal vermelho!")
+                        document.getElementById("acidente").style.display = "none"
+                    }, 1000)
+
+                    break;
+
+                case 3:
+                    limpar()
+                    document.getElementById("globo3").style.backgroundColor = "rgb(0, 180, 0)"
+                    img.src = "https://cdn-icons-png.flaticon.com/512/14018/14018595.png"
+                    document.getElementById("acidente").style.display = "block"
+
+                    setTimeout(() => {
+                        alert("Pode ir!")
+                        document.getElementById("acidente").style.display = "none"
+                    }, 400)
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1>Semáforo</h1>
+
+            <div class="container">
+                <div class="principal" id="globo1" onclick="verify(1)"></div>
+                <div class="principal" id="globo2" ondblclick="verify(2)"></div>
+                <div class="principal" id="globo3" onmouseover="verify(3)"></div>
+            </div>
+
+            <div id="acidente">
+                <img src="" alt="">
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
