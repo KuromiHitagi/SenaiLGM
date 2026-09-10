@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+
+            background-color: #d2d2d2;
+        }
+
+        main {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+        }
+
+        .caminho {
+            min-width: 90%;
+
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            gap: 150px;
+
+            background-color: #184177;
+            color: #fff !important;
+
+            .Btn {
+                position: absolute;
+                top: 10px;
+                right: 250px;
+
+                width: 10%;
+                height: 5%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                border: 1px solid #000;
+                border-radius: 15px;
+                background-color: #6411a7;
+                color: #fff !important;
+
+                transition: all ease 0.3s;
+
+                &:hover {
+                    transform: scale(1.1);
+                    background-color: #4f0d85;
+                }
+            }
+
+            .Carro {
+                position: absolute;
+                left: 5%;
+
+                width: 10%;
+                height: 10%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                border: 1px solid #000;
+                border-radius: 15px;
+                background-color: #ff7300;
+
+                transition: all ease 0.3s;
+
+                &:hover {
+                    transform: scale(1.1);
+                    background-color: #e66700;
+                }
+            }
+
+            #a1 {
+                top: 15%;
+            }
+
+            #a3 {
+                bottom: 15%;
+            }
+        }
+
+        .chegada {
+            min-width: 10%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #1152a7;
+
+            h1 {
+                color: #fff;
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <input type="text" placeholder="Digite seu nome:"
+    id="nome_usuario" class="campo_texto" name="nome">
+    <h1 id="teste2">TITULO 1</h1>
+    <h1 >TITULO 2</h1>
+    <h1 >TITULO 3</h1>
+    <h1 id="t" class="b">TITULO 4</h1> -->
+
+    <main>
+        <section class="caminho">
+            <button onclick="start()" class="Btn">
+                <h1>Jogar</h1>
+            </button>
+
+            <div id="a1" class="Carro">
+                <h1>1</h1>
+            </div>
+
+            <div id="a2" class="Carro">
+                <h1>2</h1>
+            </div>
+
+            <div id="a3" class="Carro">
+                <h1>3</h1>
+            </div>
+        </section>
+
+        <section class="chegada">
+            <h1 class="text">Chegada</h1>
+        </section>
+    </main>
+</body>
+
+<script>
+    let a1 = document.getElementById("a1")
+    let a2 = document.getElementById("a2")
+    let a3 = document.getElementById("a3")
+
+    let pos1 = 0;
+    let pos2 = 0;
+    let pos3 = 0;
+
+    function start() {
+        let num = Math.floor(Math.random() * 3) + 1
+
+        verify(num)
+
+        if(pos1 == 150 || pos2 == 150 || pos3 == 150) {
+            alert("Congratulations! The game is finished!")
+
+            pos1 = 0
+            pos2 = 0
+            pos3 = 0
+
+            a1.style.transform += `translateX(${pos1}%)`;
+            a2.style.transform += `translateX(${pos2}%)`;
+            a3.style.transform += `translateX(${pos3}%)`;
+        }
+    }
+
+    function verify(num) {
+        switch (num) {
+            case 1:
+                pos1 += 10
+                a1.style.transform += `translateX(${pos1}%)`;
+                break;
+
+            case 2:
+                pos2 += 10
+                a2.style.transform += `translateX(${pos2}%)`;
+                break;
+
+            case 3:
+                pos3 += 10
+                a3.style.transform += `translateX(${pos3}%)`;
+                break;
+        }
+    }
+</script>
+<!-- <script>
+    let teste = []
+
+    console.log(document.getElementsByTagName("h1").length)
+    console.log(document.getElementsByTagName("h1"))
+
+    console.log(teste)
+
+    for(let i = 0; i < teste.length; i++) {
+        teste.style.backgroundcolor = "red"
+    }
+
+    console.log("Por ClassName")
+    console.log(document.getElementsByClassName("b"))
+
+    console.log("Por Name")
+    console.log(document.getElementsByName("nome"))
+
+    console.log("Por querySelector")
+    console.log(document.querySelector("h1"))
+
+    console.log("Por querySelectorAll")
+    console.log(document.querySelectorAll("h1"))
+    console.log(document.querySelectorAll("h1").length)
+    console.log(document.querySelectorAll("h1")[3])
+
+    var node = document.querySelectorAll("h1")
+    for(let i = 0; i < node.length; i++) {
+        node[i].style.backgroundColor = "red"
+    }
+
+    node.forEach((caixa, id) => {
+        caixa.style.backgroundColor = "blue"
+        console.log(id, caixa)
+    })
+
+    node.forEach()
+</script> -->
+
+</html>
