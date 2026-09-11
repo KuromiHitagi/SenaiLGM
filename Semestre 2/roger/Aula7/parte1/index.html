@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 7</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all ease 0.3s;
+        }
+
+        html,
+        body {
+            height: 100vh;
+            width: 100vw;
+
+            background-color: #303030;
+            color: #d2d2d2;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+
+    </main>
+</body>
+<script>
+    let frutas = ["uva", "maçã", "manga", "banana"]
+    let numeros = [10, 5, 11, 9, 5, 10]
+    frutas.push("café")
+    console.log(frutas)
+
+    let tamanho = frutas.length
+    console.log("Tamanho: " + tamanho)
+    console.log("frutas: " + frutas.sort())
+    console.log("frutas: " + frutas.reverse())
+    console.log("numeros: " + numeros.reverse())
+    console.log("numeros: " + numeros.sort())
+    const index = frutas.indexOf("Banana")
+    console.log(index)
+    console.log(frutas.at(2))
+    console.log(frutas.toString())
+    console.log(frutas.join(" -- "))
+
+    let novo = frutas.concat(numeros)
+    console.log(novo)
+
+    frutas.splice(2, 1, "lemon", "kiwi")
+    console.log(frutas)
+
+    let primeiraFruta = frutas.shift()
+    console.log(primeiraFruta)
+    let ultimaFruta = frutas.pop()
+    console.log(ultimaFruta)
+</script>
+
+</html>

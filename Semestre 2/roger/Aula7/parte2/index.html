@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 7</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all ease 0.3s;
+        }
+
+        html,
+        body {
+            height: 100vh;
+            width: 100vw;
+
+            background-color: #303030;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            width: 100%;
+            height: 100%;
+
+            .Container {
+                width: 80%;
+                height: 80%;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+
+                background-color: #262626;
+
+                border: 2px solid #202020;
+                border-radius: 15px;
+
+                .Header {
+                    width: 100%;
+                    height: 10%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    color: #ffc9ff;
+
+                    border-bottom: 2px solid #404040;
+                }
+
+                .Content {
+                    flex: 1;
+                    width: 100%;
+                    height: 100%;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .Afazeres {
+                        flex: 1;
+
+                        width: 100%;
+                        height: 80%;
+
+                        display: flex;
+                        align-content: center;
+                        justify-content: start;
+                        flex-direction: column;
+
+                        padding: 2% 5%;
+
+                        ol {
+                            width: 90%;
+                            max-height: 100%;
+                            overflow-y: auto;
+                            padding-right: 10px;
+
+                            li {
+                                margin: 2% 0;
+                                padding: 0 2%;
+                                color: #fdd2fd;
+                                background-color: #404040;
+
+                                border: 2px solid #202020;
+                                border-radius: 15px;
+
+                                font-size: 32px;
+                            }
+                        }
+                    }
+
+                    .Btns {
+                        width: 25%;
+                        height: 100%;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 100px;
+
+                        border-left: 2px solid #404040;
+
+                        button {
+                            width: 70%;
+                            height: 10%;
+
+                            font-size: 24px;
+                            color: #ffc9ff;
+                            background-color: #404040;
+
+                            border: 2px solid #202020;
+                            border-radius: 15px;
+
+                            &:hover {
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="Container">
+            <div class="Header">
+                <h1>Lista de Tarefas</h1>
+            </div>
+
+            <div class="Content">
+                <div class="Afazeres">
+                    <ol id="afazeres"></ol>
+                </div>
+
+                <div class="Btns">
+                    <button onclick="inserir()">Inserir Tarefa</button>
+                    <button onclick="excluir()">Excluir Tarefa</button>
+                    <button onclick="listar()">Listar Tarefa</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    let Tarefas = ["Matar Indiano Miguel"];
+
+    function inserir() {
+        let nomeTarefa = String(prompt("Insira a Tarefa: "))
+        Tarefas.push(nomeTarefa)
+        alert("Tarefa adicionada com sucesso!")
+        listar()
+    }
+
+    function excluir() {
+        let nomeTarefa = String(prompt("Digite o nome da Tarefa a ser eliminada: "))
+
+        // Método utilizando forEach
+        // Tarefas.forEach((e) => {
+        //     if(e == nomeTarefa) {
+        //         Tarefas.pop(e)
+        //         alert("Tarefa eliminada com sucesso!")
+        //         listar()
+        //     }
+        // })
+
+        // Método pegando o "ID" da tarefa
+        let tarefa = Tarefas.indexOf(nomeTarefa)
+        Tarefas.pop(tarefa)
+        alert("Tarefa eliminada com sucesso!")
+        listar()
+    }
+
+    function listar() {
+        const afazeres = document.getElementById("afazeres")
+        afazeres.innerHTML = ''
+
+        Tarefas.forEach((e) => {
+            afazeres.innerHTML += `
+                <li>${e}</li>
+            `
+        })
+    }
+    listar()
+</script>
+
+</html>
