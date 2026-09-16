@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+    width: 100vw;
+
+    font-family: Arial, sans-serif;
+    color: #172033;
+    background: #eef2f7;
+}
+
+main {
+    flex: 1;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+
+    .cabecalho {
+        margin-bottom: 24px;
+        padding: 24px;
+        border-radius: 12px;
+        background: #ffffff;
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .rotulo {
+            margin: 0 0 6px;
+            color: #2563eb;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+
+    .filtros {
+        display: flex;
+        gap: 50px;
+        margin-bottom: 18px;
+    }
+}
+
+button {
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    background: #ffffff;
+}
+
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+
+.cabecalho>button,
+.filtros .ativo {
+    color: #ffffff;
+    background: #2563eb;
+}
+
+.cursos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 100px;
+    
+    width: 60%;
+
+    .curso {
+        flex: 1 1 220px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 10px;
+
+        min-width: 0;
+        padding: 18px;
+        border: 1px solid #dbe3ef;
+        border-radius: 12px;
+        background: #ffffff;
+        box-shadow: 0 8px 20px rgb(15 23 42 / 7%);
+
+        .icone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 52px;
+            height: 52px;
+
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: #1e3a8a;
+        }
+
+        .dados-curso {
+            flex: 1;
+            min-width: 0;
+
+            h2 {
+                margin-bottom: 5px;
+                font-size: 1rem;
+            }
+
+            p {
+                margin-bottom: 0;
+                color: #64748b;
+                font-size: 0.88rem;
+            }
+        }
+
+        .nivel {
+            flex: 0 0 auto;
+
+            padding: 6px 9px;
+            border-radius: 999px;
+            color: #1e3a8a;
+            font-size: 0.72rem;
+            font-weight: 700;
+
+            background: #dbeafe;
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    main {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+
+        .filtros{
+            justify-content: center;
+            align-items: center;
+
+            width: 80%;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    }
+}
