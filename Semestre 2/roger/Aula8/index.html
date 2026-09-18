@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main>
+        <div class="Container">
+            <div class="Header">
+
+                <div class="Titulo">
+                    <h1>Lista de Tarefas</h1>
+                    <h3 id="diaSemana"></h3>
+                </div>
+
+                <div class="Selector">
+                    <select name="Dias" id="Selector">
+                        <option>Selecione</option>
+                        <option value="1">Segunda</option>
+                        <option value="2">Terça</option>
+                        <option value="3">Quarta</option>
+                        <option value="4">Quinta</option>
+                        <option value="5">Sexta</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="Content">
+                <div class="Afazeres">
+                    <ol id="afazeres"></ol>
+                </div>
+
+                <div class="Btns">
+                    <button id="listar">Listar Tarefas</button>
+                    <button id="inserir">Inserir Tarefa</button>
+                    <button id="editar">Editar Tarefa</button>
+                    <button id="excluir">Excluir Tarefa</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="./script.js" type="module"></script>
+<script src="./main.js" type="module"></script>
+
+</html>
