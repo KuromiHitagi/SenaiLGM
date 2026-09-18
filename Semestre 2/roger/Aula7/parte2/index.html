@@ -147,9 +147,10 @@
                 </div>
 
                 <div class="Btns">
+                    <button onclick="listar()">Listar Tarefas</button>
                     <button onclick="inserir()">Inserir Tarefa</button>
+                    <button onclick="editar()">Editar Tarefa</button>
                     <button onclick="excluir()">Excluir Tarefa</button>
-                    <button onclick="listar()">Listar Tarefa</button>
                 </div>
             </div>
         </div>
@@ -158,6 +159,18 @@
 <script>
     let Tarefas = ["Matar Indiano Miguel"];
 
+    function listar() {
+        const afazeres = document.getElementById("afazeres")
+        afazeres.innerHTML = ''
+
+        Tarefas.forEach((e, index) => {
+            afazeres.innerHTML += `
+                <li>${index + 1} - ${e}</li>
+            `
+        })
+    }
+    listar()
+
     function inserir() {
         let nomeTarefa = String(prompt("Insira a Tarefa: "))
         Tarefas.push(nomeTarefa)
@@ -165,36 +178,48 @@
         listar()
     }
 
+    function editar() {
+        let id = parseInt(prompt("Digite o ID da tarefa a ser editada: "))
+
+        if(id > 0 && id <= Tarefas.length) {
+            let textoAntigo = Tarefas[id - 1]
+            let textoNovo = String(prompt(`Texto antigo: ${textoAntigo}. Digite o novo: `))
+
+            Tarefas[id - 1] = textoNovo;
+            alert("Tarefa geneticamente modificada com sucesso!")
+            listar()
+        } else{
+            alert("Tarefa não encontrada!")
+        }
+    }
+
     function excluir() {
-        let nomeTarefa = String(prompt("Digite o nome da Tarefa a ser eliminada: "))
+        let digitado = prompt("Digite o ID da tarefa a ser excluído: ")
 
-        // Método utilizando forEach
-        // Tarefas.forEach((e) => {
-        //     if(e == nomeTarefa) {
-        //         Tarefas.pop(e)
-        //         alert("Tarefa eliminada com sucesso!")
-        //         listar()
-        //     }
-        // })
+        if (digitado == "@all") {
+            Tarefas.length = 0
 
-        // Método pegando o "ID" da tarefa
-        let tarefa = Tarefas.indexOf(nomeTarefa)
-        Tarefas.pop(tarefa)
-        alert("Tarefa eliminada com sucesso!")
-        listar()
+            alert("Brutality!")
+            listar()
+        } else {
+            let id = parseInt(digitado)
+
+            //TESTES
+            // console.log("id: " + id)
+            // console.log("Array: " + Tarefas)
+            // console.log("length: " + Tarefas.length)
+            // console.log("length + 1: " + (Tarefas.length + 1))
+
+            if (id > 0 && id <= Tarefas.length) {
+                Tarefas.splice((id - 1), 1)
+
+                alert("Tarefa eliminada com sucesso!")
+                listar()
+            } else {
+                alert("ERROR: Digite um número válido!")
+            }
+        }
     }
-
-    function listar() {
-        const afazeres = document.getElementById("afazeres")
-        afazeres.innerHTML = ''
-
-        Tarefas.forEach((e) => {
-            afazeres.innerHTML += `
-                <li>${e}</li>
-            `
-        })
-    }
-    listar()
 </script>
 
 </html>
