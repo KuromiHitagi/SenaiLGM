@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 9</title>
+</head>
+
+<body>
+    <main>
+        <h2>O método insertAdjacentElement()</h2>
+
+        <button onclick="myFunction1()">Mover afterend</button>
+        <button onclick="myFunction2()">Mover afterbegin</button>
+        <button onclick="myFunction3()">Mover beforend</button>
+        <button onclick="myFunction4()">Mover beforebegin</button>
+
+        <p>Clique "Move" para inserir o span vermelho depos do header.</p>
+        <span id="mySpan" style="color: red;">Meu Span</span>
+        <h2 id="myH2" style="background-color: yellow;">Meu Header</h2>
+    </main>
+</body>
+<script>
+    function after() {
+        const div = document.getElementById('minhaDiv')
+        div.after("World!")
+        // document.getElementById('minhaDiv').after("World!")
+    }
+
+    function append() {
+        const div = document.getElementById('minhaDiv')
+        const h3 = document.createElement('h3')
+        div.append(h3)
+        h3.append("Hello! Este é o append no h3")
+    }
+
+    function before() {
+        const div = document.getElementById('minhaDiv')
+        div.before("Uhh?!")
+        // document.getElementById('minhaDiv').before("World!")
+    }
+</script>
+
+</html>

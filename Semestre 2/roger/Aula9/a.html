@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Manômetro 100% Offline</title>
+    
+    <!-- Puxando o arquivo que você acabou de baixar localmente -->
+    <script src="chart.js"></script>
+    
+    <style>
+        body { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            background: #f4f4f9; 
+            margin: 0; 
+            font-family: Arial, sans-serif;
+        }
+        .box { 
+            width: 320px; 
+            background: white; 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            text-align: center;
+            position: relative;
+        }
+        .texto-central {
+            position: absolute;
+            bottom: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h3>Pressão Atual</h3>
+        <canvas id="meuManometro"></canvas>
+        <!-- Texto sobreposto para mostrar o valor exato -->
+        <div class="texto-central">75 PSI</div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('meuManometro').getContext('2d');
+        
+        // O Chart.js agora vai carregar perfeitamente porque está local!
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [95, 5], // 75% preenchido, 25% restante para fechar 100%
+                    backgroundColor: ['#22c55e', '#e6e6e6'], // Verde para o preenchimento, cinza para o fundo
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                rotation: -90,      // Começa o semicírculo na esquerda (-90 graus)
+                circumference: 180, // Limita o desenho a 180 graus (metade de um círculo)
+                cutout: '85%',      // Deixa a linha mais fina e elegante
+                plugins: {
+                    tooltip: { enabled: true } // Desativa balões ao passar o mouse
+                }
+            }
+        });
+    </script>
+</body>
+</html>
