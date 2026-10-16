@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matar mosquitos</title>
+
+    <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main>
+        <section id="start" class="start active">
+            <select name="dificuldade" id="select-dificuldade">
+                <option value="">Selecione a dificuldade</option>
+                <option value="easy">Gugu Dada</option>
+                <option value="medium">Cara tranquilo</option>
+                <option value="hard">Farmador de Aura</option>
+                <option value="insane">SIGMA DA BAHIA</option>
+            </select>
+
+            <button class="" onclick="startGame()">Iniciar a gameplay</button>
+        </section>
+
+        <section id="gameplay" class="gameplay">
+            <div id="prepare" class="prepare">
+                <h1>Se prepare...</h1>
+            </div>
+
+            <h1 id="tempo" style="position: absolute; top: 10px; left: 10px; font-weight: bold; color: white;"></h1>
+            <div id="life" style="position: absolute; top: 10px; right: 10px; background-color: white; width: max-content; height: max-content; padding: 15px 30px;"></div>
+        </section>
+
+        <section id="end" class="endgame">
+            <div id="win" class="winner">
+                <img src="./image/vitoria.png" style="position: fixed; top: 10px;" alt="gameWin">
+
+                <h1>Parabéns! Você ganhou</h1>
+            </div>
+            <div id="lose" class="loser">
+                <img src="./image/game_over.png" style="position: fixed; top: 10px;" alt="gameOver">
+
+                <h1>Você é fraco, lhe falta ódio</h1>
+            </div>
+
+            <button onclick="window.location.reload()">Reiniciar</button>
+        </section>
+    </main>
+</body>
+<script src="./script.js"></script>
+
+</html>
