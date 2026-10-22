@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Busca de Endereço via CEP</h1>
+
+        <div class="Form">
+            <div class="inputCEP">
+                <div class="CEP">
+                    <label for="CEP">CEP (Somente números)</label>
+                    <input id="inputCEP" type="text" name="CEP" placeholder="Ex: 01001000">
+                </div>
+
+                <button onclick="searchCEP()">Buscar CEP</button>
+            </div>
+
+            <div class="showData">
+
+                <div class="data">
+                    <h2>Rua:</h2>
+                    <div id="ruaBox" class="dataBox">Nada ainda</div>
+                </div>
+
+                <div class="data">
+                    <h2>Bairro:</h2>
+                    <div id="bairroBox" class="dataBox">Nada ainda</div>
+                </div>
+
+                <div class="data">
+                    <h2>Cidade:</h2>
+                    <div id="cidadeBox" class="dataBox">Nada ainda</div>
+                </div>
+
+                <div class="data">
+                    <h2>Estado (UF)</h2>
+                    <div id="estadoBox" class="dataBox">Nada ainda</div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+<script src="./script.js"></script>
+
+</html>
