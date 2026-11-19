@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aula Prática - Consumo de API com Botão</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            width: 250px;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form1">
+                <h1>Consulta de Endereço via CEP</h1>
+            <h2>Busca de Endereço via CEP</h2>
+            <div class="form-group">
+                <label for="cep">CEP (somente números):</label>
+                <input type="text" id="cep" placeholder="Ex: 01001000" maxlength="8">
+                <button id="btnBuscar" onclick="buscar1()">Buscar CEP</button>
+            </div>
+            <div class="form-group">
+                <label for="logradouro">Rua:</label>
+                <input type="text" id="logradouro" readonly>
+            </div>
+            <div class="form-group">
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" readonly>
+            </div>
+            <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" readonly>
+            </div>
+            <div class="form-group">
+                <label for="uf">Estado (UF):</label>
+                <input type="text" id="uf" readonly>
+            </div>
+        </div>
+
+        <div class = "form2">
+
+            <h2>Busca de CEP via Endereço</h2>
+
+            <select name="estado" id="estadoinsira" onchange="carregarCidades()">
+                <option value="">Selecione um estado</option>
+            </select>
+
+          
+            <select name="cidade" id="cidadeinsira" disabled>
+                <option value="">Selecione uma cidade</option>  
+            </select>
+
+            <div class="form-group">
+                <label for="logradouroinsira">Logradouro:</label>
+                <input type="text" id="logradouroinsira" placeholder="Digite o nome do logradouro">
+            </div>
+
+            <div class="form-group">
+                <label for="cepResultado">CEP encontrado:</label>
+                <input type="text" id="cepResultado" readonly>
+            </div>
+
+            <button id="btnBuscarEndereco" onclick="buscar2()">Buscar Endereço</button>
+
+        </div>
+
+    </div>
+    <script src="api.js"></script>
+</body>
+
+</html>
