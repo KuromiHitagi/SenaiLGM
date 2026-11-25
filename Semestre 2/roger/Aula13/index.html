@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gráfico de personagens e suas pontuações.">
+    <title>Gráfico de personagens</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="pagina">
+        <div class= "container">
+            <div class="grafico-container">
+                <h1>Grafico de barras</h1>
+                <canvas
+                    id="grafico01"
+                    class="grafico"
+                    role="img"
+                    aria-label="Gráfico de barras"
+                ></canvas>
+            </div>
+
+            <div class="grafico-container">
+                <h1>Grafico de pizza</h1>
+                <canvas 
+                    id="grafico02"
+                    class="grafico"
+                    role="img"
+                    aria-label="Gráfico de pizza"
+                ></canvas>
+            </div>
+
+            <div class="grafico-container">
+                <h1>Histórico de pontuações</h1>
+                <canvas id="grafico03" class="grafico" aria-label="Histórico de pontuações"></canvas>
+            </div>
+
+        </div>
+
+    </main>
+
+    
+
+</body>
+</html>
